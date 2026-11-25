@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useTheme } from "next-themes";
-import { useState, useSyncExternalStore } from "react";
+import { useEffect, useRef, useState, useSyncExternalStore } from "react";
 import { categories, tools } from "@/data/tools";
 import { BrandLogo } from "./brand-logo";
 import { Icon } from "./icon";
@@ -34,6 +34,22 @@ export function DesignHeader() {
   const isDark = hydrated && resolvedTheme === "dark";
   const [mega, setMega] = useState(false);
   const [drawer, setDrawer] = useState(false);
+  const megaRef = useRef<HTMLDivElement>(null);
+  const categoriesButtonRef = useRef<HTMLButtonElement>(null);
+  useEffect(() => {
+    const closeOnOutsideClick = (event: PointerEvent) => {
+      const target = event.target as Node;
+      if (
+        !megaRef.current?.contains(target) &&
+        !categoriesButtonRef.current?.contains(target)
+      ) {
+        setMega(false);
+      }
+    };
+    document.addEventListener("pointerdown", closeOnOutsideClick);
+    return () =>
+      document.removeEventListener("pointerdown", closeOnOutsideClick);
+  }, []);
   const goTools = () => router.push("/tools");
   return (
     <>
@@ -51,6 +67,7 @@ export function DesignHeader() {
               All Tools
             </Link>
             <button
+              ref={categoriesButtonRef}
               aria-expanded={mega}
               aria-current={
                 pathname.startsWith("/tools/category/") ? "page" : undefined
@@ -88,9 +105,7 @@ export function DesignHeader() {
               <Icon name="menu" />
             </button>
           </div>
-        </div>
-        <div className="wrap" style={{ position: "relative" }}>
-          <div className={`mega ${mega ? "open" : ""}`} id="mega">
+          <div ref={megaRef} className={`mega ${mega ? "open" : ""}`} id="mega">
             {categories.map((category) => (
               <Link
                 key={category.id}

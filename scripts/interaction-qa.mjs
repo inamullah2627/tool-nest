@@ -14,6 +14,20 @@ check(
   "homepage heading",
   await page.getByRole("heading", { name: /Every Tool You Need/ }).isVisible(),
 );
+await page.getByRole("button", { name: /Categories/ }).click();
+const headerBox = await page.locator("header").boundingBox();
+const megaBox = await page.locator("#mega").boundingBox();
+check(
+  "mega menu header spacing",
+  Boolean(headerBox && megaBox && megaBox.y - headerBox.height <= 8),
+);
+await page.locator("main").dispatchEvent("pointerdown");
+check(
+  "mega menu outside click",
+  !(await page
+    .locator("#mega")
+    .evaluate((menu) => menu.classList.contains("open"))),
+);
 await page
   .getByRole("link", { name: "All Tools", exact: true })
   .first()
@@ -93,6 +107,33 @@ check(
   (await hydrationPage.locator("html").getAttribute("class"))?.includes("dark"),
 );
 await hydrationContext.close();
+
+await page.setViewportSize({ width: 1440, height: 800 });
+for (const route of [
+  "/",
+  "/tools",
+  "/tools/category/developer",
+  "/tools/json-formatter",
+]) {
+  await page.goto(`${baseUrl}${route}`, { waitUntil: "networkidle" });
+  await page.evaluate(() => window.scrollTo(0, 900));
+  await page.waitForTimeout(100);
+  const headerTop = await page
+    .locator("header")
+    .evaluate((header) => Math.round(header.getBoundingClientRect().top));
+  check(`sticky header ${route}`, headerTop === 0);
+}
+
+await page.goto(`${baseUrl}/tools`, { waitUntil: "networkidle" });
+await page.evaluate(() => window.scrollTo(0, 700));
+await page.waitForTimeout(100);
+check(
+  "sticky tools filters",
+  (await page
+    .locator(".sd")
+    .evaluate((sidebar) => Math.round(sidebar.getBoundingClientRect().top))) ===
+    96,
+);
 
 for (const [name, passed] of checks)
   console.log(`${passed ? "PASS" : "FAIL"}: ${name}`);

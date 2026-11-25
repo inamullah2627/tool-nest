@@ -54,6 +54,12 @@ const aliases = {
   wallet: Icons.Wallet,
   calendar: Icons.CalendarDays,
   info: Icons.Info,
+  paste: Icons.ClipboardPaste,
+  upload: Icons.Upload,
+  download: Icons.Download,
+  trash: Icons.Trash2,
+  alert: Icons.CircleAlert,
+  fullscreen: Icons.Maximize,
 } as const;
 
 export type IconName = keyof typeof aliases;

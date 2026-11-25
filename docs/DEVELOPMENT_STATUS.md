@@ -4,4 +4,6 @@ Complete: project foundation, component-based App Router pages, shared responsiv
 
 Developer, Text and SEO category directories are active. Image, PDF and Calculators are reviewable Coming Soon pages with `noindex` metadata and are excluded from the sitemap.
 
-Pending by scope: processing tools and their routes, content/legal routes, blog, advertisements, robots policy, and deployment.
+JSON Formatter is operational at `/tools/json-formatter`, including formatting, minification, validation, safe key sorting, syntax output, tree view, file and clipboard actions, fullscreen mode, favorites and recent activity. Other catalog tools remain unavailable.
+
+Pending by scope: remaining tool processors, content/legal routes, blog, advertisements, robots policy, and deployment.

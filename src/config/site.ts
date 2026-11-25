@@ -8,9 +8,9 @@ export const siteConfig = {
     home: "/",
     tools: "/tools",
     categories: "/tools/category/[slug]",
+    tool: "/tools/[slug]",
   },
   futureRoutes: [
-    "/tools/[slug]",
     "/blog",
     "/about",
     "/contact",

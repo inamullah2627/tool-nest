@@ -55,8 +55,8 @@ const toolIcons: Record<string, IconName> = {
 
 type CategoryTool = Pick<
   Tool,
-  "id" | "name" | "shortDescription" | "category" | "iconKey" | "group"
->;
+  "id" | "slug" | "name" | "shortDescription" | "category" | "iconKey" | "group"
+> & { implementationStatus?: Tool["implementationStatus"] };
 
 export function CategoryPage({ slug }: { slug: keyof typeof categoryConfigs }) {
   const config = categoryConfigs[slug];
@@ -447,11 +447,14 @@ function CategoryToolCard({
       <h3>{tool.name}</h3>
       <p>{tool.shortDescription}</p>
       <span className="cat">{tool.group}</span>
-      {!comingSoon && (
-        <span className="use">
-          Use Tool <Icon name="arrow" size={16} />
-        </span>
-      )}
+      {!comingSoon &&
+        (tool.implementationStatus === "operational" ? (
+          <Link className="use" href={`/tools/${tool.slug}`}>
+            Use Tool <Icon name="arrow" size={16} />
+          </Link>
+        ) : (
+          <span className="use unavailable">Coming Soon</span>
+        ))}
     </article>
   );
 }

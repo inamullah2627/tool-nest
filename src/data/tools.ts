@@ -222,7 +222,7 @@ export const tools: Tool[] = entries.map(
     keywords,
     group,
     availability: "catalog",
-    implementationStatus: "planned",
+    implementationStatus: slug === "json-formatter" ? "operational" : "planned",
     featured,
     seo: { title: `${name} — ToolNest`, description: shortDescription },
   }),

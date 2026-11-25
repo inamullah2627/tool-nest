@@ -10,7 +10,7 @@ export interface Tool {
   keywords: string[];
   group: string;
   availability: "catalog" | "coming-soon";
-  implementationStatus: "planned" | "coming-soon";
+  implementationStatus: "operational" | "planned" | "coming-soon";
   featured: boolean;
   seo: { title: string; description: string };
 }

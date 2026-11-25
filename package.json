@@ -8,12 +8,14 @@
     "start": "next start",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
+    "test": "vitest run",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "qa:visual": "node scripts/visual-qa.mjs && node scripts/compare-visuals.mjs",
     "qa:interactions": "node scripts/interaction-qa.mjs",
     "qa:quality": "node scripts/quality-audit.mjs",
-    "qa:categories": "node scripts/category-qa.mjs"
+    "qa:categories": "node scripts/category-qa.mjs",
+    "qa:json": "node scripts/json-formatter-qa.mjs"
   },
   "dependencies": {
     "lucide-react": "^1.80.0",
@@ -25,7 +27,7 @@
   "devDependencies": {
     "@axe-core/playwright": "^4.14.1",
     "@tailwindcss/turbopack": "4.3.3",
-    "@types/node": "^20",
+    "@types/node": "^22.19.0",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
@@ -36,6 +38,7 @@
     "prettier": "^3.10.1",
     "prettier-plugin-tailwindcss": "^0.8.1",
     "tailwindcss": "4.3.3",
-    "typescript": "^5"
+    "typescript": "^5",
+    "vitest": "^5.1.2"
   }
 }

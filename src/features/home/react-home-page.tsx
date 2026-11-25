@@ -79,7 +79,7 @@ export function ExactToolCard({
   tool: Tool;
   detailedIcon?: boolean;
 }) {
-  const { favorites, toggleFavorite, recordRecent } = usePreferences();
+  const { favorites, toggleFavorite } = usePreferences();
   const category = categoryMap[tool.category];
   const favorite = favorites.includes(tool.id);
   return (
@@ -113,9 +113,18 @@ export function ExactToolCard({
       <h3>{tool.name}</h3>
       <p>{tool.shortDescription}</p>
       <span className="cat">{category.shortName} Tools</span>
-      <button className="use" onClick={() => recordRecent(tool.id)}>
-        Use Tool <Icon name="arrow" size={16} />
-      </button>
+      {tool.implementationStatus === "operational" ? (
+        <Link className="use" href={`/tools/${tool.slug}`}>
+          Use Tool <Icon name="arrow" size={16} />
+        </Link>
+      ) : (
+        <span
+          className="use unavailable"
+          aria-label={`${tool.name} is not yet available`}
+        >
+          Coming Soon
+        </span>
+      )}
     </article>
   );
 }
