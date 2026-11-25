@@ -201,19 +201,15 @@ function CategoryBento() {
           "--c": category.color,
           ...sizes[category.id],
         } as React.CSSProperties;
-        return category.active ? (
+        return (
           <Link
-            href={`/tools?category=${category.id}`}
-            className="bc"
+            href={`/tools/category/${category.id}`}
+            className={`bc ${category.active ? "" : "off"}`}
             style={style}
             key={category.id}
           >
             {content}
           </Link>
-        ) : (
-          <div className="bc off" style={style} key={category.id}>
-            {content}
-          </div>
         );
       })}
     </div>

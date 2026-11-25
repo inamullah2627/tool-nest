@@ -62,6 +62,38 @@ check(
     .evaluate((drawer) => drawer.classList.contains("open")),
 );
 
+const hydrationContext = await browser.newContext({
+  viewport: { width: 1440, height: 1000 },
+});
+await hydrationContext.addInitScript(() => {
+  localStorage.setItem(
+    "toolnest:favorites",
+    JSON.stringify(["json-formatter"]),
+  );
+  localStorage.setItem("theme", "dark");
+});
+const hydrationPage = await hydrationContext.newPage();
+const consoleErrors = [];
+hydrationPage.on("console", (message) => {
+  if (message.type() === "error") consoleErrors.push(message.text());
+});
+await hydrationPage.goto(`${baseUrl}/`, { waitUntil: "networkidle" });
+check(
+  "saved favorites restored",
+  (await hydrationPage
+    .getByLabel("Favorite JSON Formatter")
+    .getAttribute("aria-pressed")) === "true",
+);
+check(
+  "no hydration mismatch",
+  !consoleErrors.some((message) => message.toLowerCase().includes("hydration")),
+);
+check(
+  "saved dark theme restored",
+  (await hydrationPage.locator("html").getAttribute("class"))?.includes("dark"),
+);
+await hydrationContext.close();
+
 for (const [name, passed] of checks)
   console.log(`${passed ? "PASS" : "FAIL"}: ${name}`);
 await browser.close();

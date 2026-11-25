@@ -1,7 +1,11 @@
 # Routes
 
-Implemented: `/` and `/tools`.
+Implemented: `/`, `/tools`, and the shared `/tools/category/[slug]` template.
 
-Reserved for later designs: `/tools/category/[slug]`, `/tools/[slug]`, `/blog`, `/blog/[slug]`, `/about`, `/contact`, `/privacy-policy`, `/terms-and-conditions`, `/disclaimer`, and `/search`.
+Active indexed category routes: `/tools/category/developer`, `/tools/category/text`, and `/tools/category/seo`.
 
-Unimplemented destinations are not linked as functional. Category selection currently resolves to directory query parameters.
+Reviewable Coming Soon routes: `/tools/category/image`, `/tools/category/pdf`, and `/tools/category/calculators`. These routes are marked `noindex` and excluded from `sitemap.xml`.
+
+Reserved for later designs: `/tools/[slug]`, `/blog`, `/blog/[slug]`, `/about`, `/contact`, `/privacy-policy`, `/terms-and-conditions`, `/disclaimer`, and `/search`.
+
+Unimplemented destinations are not linked as functional. Shared navigation now resolves category links to their dedicated category routes.

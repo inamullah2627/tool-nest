@@ -8,6 +8,7 @@ export interface Tool {
   category: CategoryId;
   iconKey: string;
   keywords: string[];
+  group: string;
   availability: "catalog" | "coming-soon";
   implementationStatus: "planned" | "coming-soon";
   featured: boolean;

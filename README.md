@@ -11,4 +11,6 @@ npm run dev
 
 Open `http://localhost:3000`. Validate with `npm run lint`, `npm run typecheck`, and `npm run build`.
 
+Implemented routes include the homepage, all-tools directory, and six reusable category pages under `/tools/category/[slug]`. Developer, Text and SEO are active; Image, PDF and Calculators are clearly marked Coming Soon.
+
 The optional `NEXT_PUBLIC_SITE_URL` environment variable supplies a future canonical metadata base. See `docs/` for design, architecture, routes, and status.

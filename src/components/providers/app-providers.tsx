@@ -4,6 +4,7 @@ import {
   createContext,
   useCallback,
   useContext,
+  useEffect,
   useMemo,
   useState,
 } from "react";
@@ -15,7 +16,6 @@ interface PreferencesValue {
 }
 const PreferencesContext = createContext<PreferencesValue | null>(null);
 const read = (key: string) => {
-  if (typeof window === "undefined") return [];
   try {
     return JSON.parse(localStorage.getItem(key) ?? "[]") as string[];
   } catch {
@@ -23,10 +23,17 @@ const read = (key: string) => {
   }
 };
 function PreferencesProvider({ children }: { children: React.ReactNode }) {
-  const [favorites, setFavorites] = useState<string[]>(() =>
-    read("toolnest:favorites"),
-  );
-  const [recent, setRecent] = useState<string[]>(() => read("toolnest:recent"));
+  // Keep the server and the client's first render identical. Browser-only
+  // preferences are restored immediately after hydration.
+  const [favorites, setFavorites] = useState<string[]>([]);
+  const [recent, setRecent] = useState<string[]>([]);
+  useEffect(() => {
+    const restorePreferences = window.setTimeout(() => {
+      setFavorites(read("toolnest:favorites"));
+      setRecent(read("toolnest:recent"));
+    }, 0);
+    return () => window.clearTimeout(restorePreferences);
+  }, []);
   const persist = useCallback((key: string, value: string[]) => {
     try {
       localStorage.setItem(key, JSON.stringify(value));

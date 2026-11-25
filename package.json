@@ -12,7 +12,8 @@
     "format:check": "prettier --check .",
     "qa:visual": "node scripts/visual-qa.mjs && node scripts/compare-visuals.mjs",
     "qa:interactions": "node scripts/interaction-qa.mjs",
-    "qa:quality": "node scripts/quality-audit.mjs"
+    "qa:quality": "node scripts/quality-audit.mjs",
+    "qa:categories": "node scripts/category-qa.mjs"
   },
   "dependencies": {
     "lucide-react": "^1.80.0",

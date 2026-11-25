@@ -4,9 +4,12 @@ export const siteConfig = {
   description:
     "Free browser-based tools for developers, writers, SEO professionals, students and everyday digital tasks.",
   url: process.env.NEXT_PUBLIC_SITE_URL,
-  routes: { home: "/", tools: "/tools" },
+  routes: {
+    home: "/",
+    tools: "/tools",
+    categories: "/tools/category/[slug]",
+  },
   futureRoutes: [
-    "/tools/category/[slug]",
     "/tools/[slug]",
     "/blog",
     "/about",

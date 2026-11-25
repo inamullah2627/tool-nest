@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useTheme } from "next-themes";
-import { useState } from "react";
+import { useState, useSyncExternalStore } from "react";
 import { categories, tools } from "@/data/tools";
 import { BrandLogo } from "./brand-logo";
 import { Icon } from "./icon";
@@ -17,10 +17,21 @@ const categoryIcon = {
   calculators: "calc",
 } as const;
 
+const subscribeToHydration = () => () => {};
+function useHydrated() {
+  return useSyncExternalStore(
+    subscribeToHydration,
+    () => true,
+    () => false,
+  );
+}
+
 export function DesignHeader() {
   const pathname = usePathname();
   const router = useRouter();
   const { resolvedTheme, setTheme } = useTheme();
+  const hydrated = useHydrated();
+  const isDark = hydrated && resolvedTheme === "dark";
   const [mega, setMega] = useState(false);
   const [drawer, setDrawer] = useState(false);
   const goTools = () => router.push("/tools");
@@ -41,6 +52,9 @@ export function DesignHeader() {
             </Link>
             <button
               aria-expanded={mega}
+              aria-current={
+                pathname.startsWith("/tools/category/") ? "page" : undefined
+              }
               aria-controls="mega"
               onClick={() => setMega(!mega)}
               onMouseEnter={() => setMega(true)}
@@ -61,10 +75,7 @@ export function DesignHeader() {
                 setTheme(resolvedTheme === "dark" ? "light" : "dark")
               }
             >
-              <Icon
-                name={resolvedTheme === "dark" ? "sun" : "moon"}
-                size={18}
-              />
+              <Icon name={isDark ? "sun" : "moon"} size={18} />
             </button>
             <Link href="/tools" className="btn pr hd-btn">
               Explore Tools
@@ -83,11 +94,7 @@ export function DesignHeader() {
             {categories.map((category) => (
               <Link
                 key={category.id}
-                href={
-                  category.active
-                    ? `/tools?category=${category.id}`
-                    : "/tools?availability=soon"
-                }
+                href={`/tools/category/${category.id}`}
                 className="mi"
                 style={{ "--c": category.color } as React.CSSProperties}
                 onClick={() => setMega(false)}
@@ -166,11 +173,7 @@ export function DesignHeader() {
           {categories.map((category) => (
             <Link
               className="dl"
-              href={
-                category.active
-                  ? `/tools?category=${category.id}`
-                  : "/tools?availability=soon"
-              }
+              href={`/tools/category/${category.id}`}
               key={category.id}
               onClick={() => setDrawer(false)}
             >
@@ -186,6 +189,8 @@ export function DesignHeader() {
 
 export function DesignFooter() {
   const { resolvedTheme, setTheme } = useTheme();
+  const hydrated = useHydrated();
+  const isDark = hydrated && resolvedTheme === "dark";
   return (
     <footer>
       <div className="wrap">
@@ -203,13 +208,7 @@ export function DesignFooter() {
             <ul>
               {categories.map((category) => (
                 <li key={category.id}>
-                  <Link
-                    href={
-                      category.active
-                        ? `/tools?category=${category.id}`
-                        : "/tools?availability=soon"
-                    }
-                  >
+                  <Link href={`/tools/category/${category.id}`}>
                     {category.name.replace("Calculator Tools", "Calculators")}
                   </Link>
                 </li>
@@ -254,8 +253,8 @@ export function DesignFooter() {
               setTheme(resolvedTheme === "dark" ? "light" : "dark")
             }
           >
-            <Icon name={resolvedTheme === "dark" ? "sun" : "moon"} size={18} />{" "}
-            {resolvedTheme === "dark" ? "Light mode" : "Dark mode"}
+            <Icon name={isDark ? "sun" : "moon"} size={18} />{" "}
+            {isDark ? "Light mode" : "Dark mode"}
           </button>
         </div>
       </div>

@@ -42,6 +42,18 @@ const aliases = {
   route: Icons.Route,
   bot: Icons.Bot,
   share: Icons.Share2,
+  terminal: Icons.Terminal,
+  globe: Icons.Globe2,
+  shieldCheck: Icons.ShieldCheck,
+  maximize: Icons.Maximize2,
+  crop: Icons.Crop,
+  repeat: Icons.Repeat2,
+  layers: Icons.Layers,
+  scissors: Icons.Scissors,
+  percent: Icons.Percent,
+  wallet: Icons.Wallet,
+  calendar: Icons.CalendarDays,
+  info: Icons.Info,
 } as const;
 
 export type IconName = keyof typeof aliases;
