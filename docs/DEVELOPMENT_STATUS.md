@@ -4,6 +4,8 @@ Complete: project foundation, component-based App Router pages, shared responsiv
 
 Developer, Text and SEO category directories are active. Image, PDF and Calculators are reviewable Coming Soon pages with `noindex` metadata and are excluded from the sitemap.
 
-JSON Formatter is operational at `/tools/json-formatter`, including formatting, minification, validation, safe key sorting, syntax output, tree view, file and clipboard actions, fullscreen mode, favorites and recent activity. Other catalog tools remain unavailable.
+JSON Formatter is operational at `/tools/json-formatter`, including formatting, minification, validation, safe key sorting, syntax output, tree view, file and clipboard actions, fullscreen mode, favorites and recent activity.
+
+Word Counter is operational at `/tools/word-counter`, including live Unicode-aware text analysis, character and structure counts, keyword density, reading/speaking estimates, TXT file actions, fullscreen mode, favorites and recent activity. Text stays in browser memory and TXT input is limited to 1 MB. Other catalog tools remain unavailable.
 
 Pending by scope: remaining tool processors, content/legal routes, blog, advertisements, robots policy, and deployment.

@@ -2,7 +2,7 @@
 
 Implemented: `/`, `/tools`, and the shared `/tools/category/[slug]` template.
 
-The reusable individual-tool route `/tools/[slug]` is established. `/tools/json-formatter` is the only operational tool page.
+The reusable individual-tool route `/tools/[slug]` is established. `/tools/json-formatter` and `/tools/word-counter` are operational tool pages.
 
 Active indexed category routes: `/tools/category/developer`, `/tools/category/text`, and `/tools/category/seo`.
 
