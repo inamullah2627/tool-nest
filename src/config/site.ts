@@ -1,0 +1,19 @@
+export const siteConfig = {
+  name: "ToolNest",
+  tagline: "All your tools. One place.",
+  description:
+    "Free browser-based tools for developers, writers, SEO professionals, students and everyday digital tasks.",
+  url: process.env.NEXT_PUBLIC_SITE_URL,
+  routes: { home: "/", tools: "/tools" },
+  futureRoutes: [
+    "/tools/category/[slug]",
+    "/tools/[slug]",
+    "/blog",
+    "/about",
+    "/contact",
+    "/privacy-policy",
+    "/terms-and-conditions",
+    "/disclaimer",
+    "/search",
+  ],
+} as const;
