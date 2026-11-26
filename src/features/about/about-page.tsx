@@ -565,21 +565,14 @@ export function AboutPage() {
                   platform? We welcome practical feedback that helps make
                   ToolNest more useful.
                 </p>
-                <small>A dedicated contact page is coming soon.</small>
               </div>
               <div className="about-actions">
-                <span
-                  className="btn pr about-disabled-action"
-                  aria-disabled="true"
-                >
+                <Link className="btn pr" href="/contact?inquiry=suggest-a-tool">
                   Suggest a Tool
-                </span>
-                <span
-                  className="btn about-disabled-action"
-                  aria-disabled="true"
-                >
+                </Link>
+                <Link className="btn" href="/contact">
                   Contact Us
-                </span>
+                </Link>
               </div>
             </div>
           </div>

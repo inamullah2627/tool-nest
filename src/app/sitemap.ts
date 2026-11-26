@@ -13,6 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const paths = [
     "",
     "/about",
+    "/contact",
     "/tools",
     ...categories
       .filter((category) => category.active)

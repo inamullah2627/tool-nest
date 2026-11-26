@@ -398,8 +398,12 @@ export function ReactToolsPage() {
                 We’re always looking for new ways to make your everyday tasks
                 easier. Tell us what tool you would like to see next.
               </p>
-              <span className="btn w">Suggest a Tool</span>
-              <span className="sl">Contact Us</span>
+              <Link href="/contact?inquiry=suggest-a-tool" className="btn w">
+                Suggest a Tool
+              </Link>
+              <Link href="/contact" className="sl">
+                Contact Us
+              </Link>
             </div>
           </div>
         </section>

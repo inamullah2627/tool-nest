@@ -555,9 +555,9 @@ export function ReactHomePage() {
               <Link href="/tools" className="btn w">
                 Explore All Tools
               </Link>
-              <a href="#faq" className="sl">
+              <Link href="/contact?inquiry=suggest-a-tool" className="sl">
                 Suggest a Tool
-              </a>
+              </Link>
             </div>
           </div>
         </section>

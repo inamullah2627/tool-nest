@@ -11,9 +11,9 @@ export const siteConfig = {
     tool: "/tools/[slug]",
     blog: "/blog",
     about: "/about",
+    contact: "/contact",
   },
   futureRoutes: [
-    "/contact",
     "/privacy-policy",
     "/terms-and-conditions",
     "/disclaimer",

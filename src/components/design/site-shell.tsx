@@ -256,7 +256,7 @@ export function DesignFooter() {
                 <Link href="/about">About Us</Link>
               </li>
               <li>
-                <Link href="/about#about-feedback">Contact Us</Link>
+                <Link href="/contact">Contact Us</Link>
               </li>
             </ul>
           </div>

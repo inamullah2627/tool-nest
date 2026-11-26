@@ -402,7 +402,7 @@ export function CategoryPage({ slug }: { slug: keyof typeof categoryConfigs }) {
               <Link href="/tools" className="btn w">
                 Explore All Tools
               </Link>
-              <Link href="/#faq" className="sl">
+              <Link href="/contact?inquiry=suggest-a-tool" className="sl">
                 Suggest a Tool
               </Link>
             </div>

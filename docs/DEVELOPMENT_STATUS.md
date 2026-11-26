@@ -2,7 +2,9 @@
 
 Complete: project foundation, component-based App Router pages, shared responsive shell, themes, mobile navigation, typed registry, persistent favorites/recent state, homepage, all-tools directory, reusable category template, all six category routes, combined filters, sorting, views, empty states, metadata, sitemap, accessibility/performance QA scripts, and documentation.
 
-The About page is implemented at `/about` with static server-rendered content, in-page navigation, registry-derived category/tool status, responsive light/dark styling and page metadata. Contact and standalone legal destinations remain intentionally unpublished and are represented by clear on-page status messaging.
+The About page is implemented at `/about` with static server-rendered content, in-page navigation, registry-derived category/tool status, responsive light/dark styling and page metadata.
+
+The Contact page is implemented at `/contact` with accessible validation, inquiry presets, conditional registry-backed tool selection and character counting. Its modular submission adapter returns an explicit unavailable state; no contact information is sent or persisted while a delivery service is unconfigured. Standalone legal destinations remain unpublished.
 
 Developer, Text and SEO category directories are active. Image, PDF and Calculators are reviewable Coming Soon pages with `noindex` metadata and are excluded from the sitemap.
 

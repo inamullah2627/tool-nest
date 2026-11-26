@@ -70,6 +70,10 @@ const aliases = {
   refresh: Icons.RefreshCw,
   penline: Icons.PenLine,
   grad: Icons.GraduationCap,
+  msg: Icons.MessageCircle,
+  bulb: Icons.Lightbulb,
+  bug: Icons.Bug,
+  send: Icons.Send,
 } as const;
 
 export type IconName = keyof typeof aliases;
