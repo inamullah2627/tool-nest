@@ -604,7 +604,9 @@ function BlogSection() {
           <div className="sh" style={{ margin: 0 }}>
             <h2>Learn, Explore and Work Smarter</h2>
           </div>
-          <span className="btn">View All Articles</span>
+          <Link href="/blog" className="btn">
+            View All Articles
+          </Link>
         </div>
         <div className="bg3">
           {posts.map(([categoryId, title, copy, time], index) => {

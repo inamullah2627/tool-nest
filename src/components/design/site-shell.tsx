@@ -78,7 +78,12 @@ export function DesignHeader() {
             >
               Categories <Icon name="chev" size={16} />
             </button>
-            <Link href="/#blog">Blog</Link>
+            <Link
+              href="/blog"
+              aria-current={pathname === "/blog" ? "page" : undefined}
+            >
+              Blog
+            </Link>
             <Link href="/#about">About</Link>
           </nav>
           <div className="rt">
@@ -162,7 +167,7 @@ export function DesignHeader() {
           {[
             ["Home", "/"],
             ["All Tools", "/tools"],
-            ["Blog", "/#blog"],
+            ["Blog", "/blog"],
             ["About", "/#about"],
           ].map(([label, href]) => (
             <Link
@@ -240,7 +245,7 @@ export function DesignFooter() {
                 <Link href="/tools">All Tools</Link>
               </li>
               <li>
-                <Link href="/#blog">Blog</Link>
+                <Link href="/blog">Blog</Link>
               </li>
               <li>
                 <Link href="/#about">About Us</Link>

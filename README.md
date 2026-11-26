@@ -15,4 +15,6 @@ Implemented routes include the homepage, all-tools directory, and six reusable c
 
 JSON Formatter, Word Counter and Meta Tag Generator are operational browser-side utilities. Meta Tag Generator safely escapes generated HTML, validates HTTP(S) URLs locally and provides illustrative search previews without fetching external sites. Run `npm test` for focused processor tests and `npm run qa:json` against a production server for JSON interaction checks.
 
+The `/blog` route provides a responsive, filterable preview listing backed by typed local article data. All current articles are unpublished samples: detail links are intentionally unavailable and the listing is marked `noindex, nofollow` until real editorial content is published.
+
 The optional `NEXT_PUBLIC_SITE_URL` environment variable supplies a future canonical metadata base. See `docs/` for design, architecture, routes, and status.
