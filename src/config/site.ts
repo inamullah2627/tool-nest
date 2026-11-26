@@ -14,6 +14,7 @@ export const siteConfig = {
     contact: "/contact",
     privacyPolicy: "/privacy-policy",
     termsAndConditions: "/terms-and-conditions",
+    disclaimer: "/disclaimer",
   },
-  futureRoutes: ["/disclaimer", "/search"],
+  futureRoutes: ["/search"],
 } as const;

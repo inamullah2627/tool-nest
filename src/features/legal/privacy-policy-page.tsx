@@ -341,7 +341,7 @@ export function PrivacyPolicyPage() {
       contactIcon="shieldCheck"
       relatedDocuments={[
         { title: "Terms & Conditions", href: "/terms-and-conditions" },
-        { title: "Disclaimer" },
+        { title: "Disclaimer", href: "/disclaimer" },
       ]}
     />
   );

@@ -76,6 +76,8 @@ const aliases = {
   send: Icons.Send,
   eye: Icons.Eye,
   copyright: Icons.Copyright,
+  clipboardCheck: Icons.ClipboardCheck,
+  external: Icons.ExternalLink,
 } as const;
 
 export type IconName = keyof typeof aliases;

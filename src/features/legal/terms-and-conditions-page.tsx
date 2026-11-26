@@ -27,7 +27,7 @@ export function TermsAndConditionsPage() {
       contactIcon="msg"
       relatedDocuments={[
         { title: "Privacy Policy", href: "/privacy-policy" },
-        { title: "Disclaimer" },
+        { title: "Disclaimer", href: "/disclaimer" },
       ]}
     />
   );

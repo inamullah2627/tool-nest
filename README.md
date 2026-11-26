@@ -19,6 +19,6 @@ The `/blog` route provides a responsive, filterable preview listing backed by ty
 
 The `/about` route presents ToolNest's story, purpose, principles, registry-backed category availability and privacy approach. The `/contact` route provides validated inquiry, suggestion and bug-report forms with registry-backed tool selection. Message delivery is intentionally unavailable until a real service is configured; form data is neither transmitted nor persisted.
 
-The reusable legal layout powers the draft `/privacy-policy` and `/terms-and-conditions` routes, including generated contents navigation and active-section tracking. Both remain `noindex, nofollow` and outside the sitemap until legal, operator and production-infrastructure review is complete.
+The reusable legal layout powers the draft `/privacy-policy`, `/terms-and-conditions` and `/disclaimer` routes, including generated contents navigation and active-section tracking. All three remain `noindex, nofollow` and outside the sitemap until legal, operator and production-infrastructure review is complete.
 
 The optional `NEXT_PUBLIC_SITE_URL` environment variable supplies a future canonical metadata base. See `docs/` for design, architecture, routes, and status.

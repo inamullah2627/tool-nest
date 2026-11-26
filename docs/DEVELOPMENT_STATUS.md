@@ -10,6 +10,8 @@ The reusable legal page layout and draft Privacy Policy are implemented at `/pri
 
 Draft Terms & Conditions are implemented at `/terms-and-conditions` using the same legal layout and centralized structured content. They remain excluded from indexing and the sitemap. Operator identity, age and eligibility rules, intellectual-property ownership, warranty and liability language, governing law, dispute venue, restriction procedures, effective date and formal contact details require qualified legal review.
 
+The draft Disclaimer is implemented at `/disclaimer` with centralized structured content and verified disclosures for the operational JSON Formatter, Word Counter and Meta Tag Generator. Planned Image, PDF and Calculator categories are identified as unavailable. The page remains excluded from indexing and the sitemap; risk allocation, liability language, operator identity, effective date and final professional-advice wording require legal review.
+
 Developer, Text and SEO category directories are active. Image, PDF and Calculators are reviewable Coming Soon pages with `noindex` metadata and are excluded from the sitemap.
 
 JSON Formatter is operational at `/tools/json-formatter`, including formatting, minification, validation, safe key sorting, syntax output, tree view, file and clipboard actions, fullscreen mode, favorites and recent activity.

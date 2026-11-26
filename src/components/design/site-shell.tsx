@@ -269,7 +269,9 @@ export function DesignFooter() {
               <li>
                 <Link href="/terms-and-conditions">Terms &amp; Conditions</Link>
               </li>
-              <li>Disclaimer</li>
+              <li>
+                <Link href="/disclaimer">Disclaimer</Link>
+              </li>
             </ul>
           </div>
         </div>
