@@ -229,7 +229,7 @@ export function DesignFooter() {
             <span className="tag">All your tools. One place.</span>
           </div>
           <div>
-            <h4>Tool Categories</h4>
+            <h3>Tool Categories</h3>
             <ul>
               {categories.map((category) => (
                 <li key={category.id}>
@@ -241,7 +241,7 @@ export function DesignFooter() {
             </ul>
           </div>
           <div>
-            <h4>Quick Links</h4>
+            <h3>Quick Links</h3>
             <ul>
               <li>
                 <Link href="/">Home</Link>
@@ -261,7 +261,7 @@ export function DesignFooter() {
             </ul>
           </div>
           <div>
-            <h4>Legal</h4>
+            <h3>Legal</h3>
             <ul>
               <li>
                 <Link href="/about#privacy">Privacy Policy</Link>

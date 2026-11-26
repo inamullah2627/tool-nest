@@ -2,6 +2,8 @@
 
 Complete: project foundation, component-based App Router pages, shared responsive shell, themes, mobile navigation, typed registry, persistent favorites/recent state, homepage, all-tools directory, reusable category template, all six category routes, combined filters, sorting, views, empty states, metadata, sitemap, accessibility/performance QA scripts, and documentation.
 
+The About page is implemented at `/about` with static server-rendered content, in-page navigation, registry-derived category/tool status, responsive light/dark styling and page metadata. Contact and standalone legal destinations remain intentionally unpublished and are represented by clear on-page status messaging.
+
 Developer, Text and SEO category directories are active. Image, PDF and Calculators are reviewable Coming Soon pages with `noindex` metadata and are excluded from the sitemap.
 
 JSON Formatter is operational at `/tools/json-formatter`, including formatting, minification, validation, safe key sorting, syntax output, tree view, file and clipboard actions, fullscreen mode, favorites and recent activity.
