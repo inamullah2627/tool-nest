@@ -337,7 +337,12 @@ export function PrivacyPolicyPage() {
       sections={sections}
       contactHeading="Have a Privacy Question?"
       contactText="Use the privacy-preselected Contact form. Delivery remains unavailable until a real service is configured."
-      relatedDocuments={["Terms & Conditions", "Disclaimer"]}
+      contactHref="/contact?inquiry=privacy-concern"
+      contactIcon="shieldCheck"
+      relatedDocuments={[
+        { title: "Terms & Conditions", href: "/terms-and-conditions" },
+        { title: "Disclaimer" },
+      ]}
     />
   );
 }

@@ -12,6 +12,11 @@ export type LegalSection = {
   content: ReactNode;
 };
 
+export type LegalDocumentLink = {
+  title: string;
+  href?: string;
+};
+
 type Highlight = {
   icon: IconName;
   title: string;
@@ -29,7 +34,9 @@ type Props = {
   sections: LegalSection[];
   contactHeading: string;
   contactText: string;
-  relatedDocuments: string[];
+  contactHref?: string;
+  contactIcon?: IconName;
+  relatedDocuments: LegalDocumentLink[];
 };
 
 export function LegalPageLayout({
@@ -43,6 +50,8 @@ export function LegalPageLayout({
   sections,
   contactHeading,
   contactText,
+  contactHref = "/contact",
+  contactIcon = "msg",
   relatedDocuments,
 }: Props) {
   const [activeId, setActiveId] = useState(sections[0]?.id ?? "");
@@ -181,31 +190,45 @@ export function LegalPageLayout({
 
                 <div className="legal-contact-card">
                   <span className="cico">
-                    <Icon name="shieldCheck" size={26} />
+                    <Icon name={contactIcon} size={26} />
                   </span>
                   <div>
                     <h3>{contactHeading}</h3>
                     <p>{contactText}</p>
                   </div>
-                  <Link
-                    className="btn pr"
-                    href="/contact?inquiry=privacy-concern"
-                  >
+                  <Link className="btn pr" href={contactHref}>
                     Contact Us
                   </Link>
                 </div>
                 <div className="legal-related">
                   <h3>Related Legal Documents</h3>
                   <div>
-                    {relatedDocuments.map((document) => (
-                      <div className="legal-related-card" key={document}>
-                        <span>
-                          <Icon name="file" size={18} />
-                        </span>
-                        {document}
-                        <span className="soon">Coming Soon</span>
-                      </div>
-                    ))}
+                    {relatedDocuments.map((document) =>
+                      document.href ? (
+                        <Link
+                          className="legal-related-card"
+                          href={document.href}
+                          key={document.title}
+                        >
+                          <span>
+                            <Icon name="file" size={18} />
+                          </span>
+                          {document.title}
+                          <Icon name="arrow" size={16} />
+                        </Link>
+                      ) : (
+                        <div
+                          className="legal-related-card"
+                          key={document.title}
+                        >
+                          <span>
+                            <Icon name="file" size={18} />
+                          </span>
+                          {document.title}
+                          <span className="soon">Coming Soon</span>
+                        </div>
+                      ),
+                    )}
                   </div>
                 </div>
                 <button

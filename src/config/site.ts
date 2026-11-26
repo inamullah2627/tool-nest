@@ -13,6 +13,7 @@ export const siteConfig = {
     about: "/about",
     contact: "/contact",
     privacyPolicy: "/privacy-policy",
+    termsAndConditions: "/terms-and-conditions",
   },
-  futureRoutes: ["/terms-and-conditions", "/disclaimer", "/search"],
+  futureRoutes: ["/disclaimer", "/search"],
 } as const;

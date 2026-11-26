@@ -9,3 +9,5 @@ The Blog listing currently demonstrates the future editorial structure with loca
 The About page is static and uses the tool registry for category availability and tool counts. The Contact page provides a frontend-only validated form; its delivery adapter intentionally performs no network request or persistence until a real service is configured. Unfinished legal pages are not presented as published.
 
 The Privacy Policy is an implementation-audited working draft, not finalized legal advice. Current code has no analytics, advertising, cookie-setting, email delivery, CMS or database integration. Local storage is limited to theme, favorites and recently used tool preferences. Production hosting and legal details require a separate pre-launch audit.
+
+The Terms & Conditions page is also an explicitly non-indexed working draft. Its content does not identify an operator, company, jurisdiction or governing law and does not claim that proposed warranty or liability language is enforceable.

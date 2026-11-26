@@ -1443,6 +1443,10 @@ footer .tag {
   display: flex;
   color: var(--p);
 }
+.legal-page .legal-related-card > svg:last-child {
+  margin-left: auto;
+  color: var(--m);
+}
 .legal-page .legal-related-card .soon {
   margin-left: auto;
 }

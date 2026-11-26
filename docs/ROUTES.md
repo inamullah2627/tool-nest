@@ -1,6 +1,6 @@
 # Routes
 
-Implemented: `/`, `/about`, `/contact`, `/privacy-policy`, `/tools`, `/blog`, and the shared `/tools/category/[slug]` template.
+Implemented: `/`, `/about`, `/contact`, `/privacy-policy`, `/terms-and-conditions`, `/tools`, `/blog`, and the shared `/tools/category/[slug]` template.
 
 The reusable individual-tool route `/tools/[slug]` is established. `/tools/json-formatter`, `/tools/word-counter` and `/tools/meta-tag-generator` are operational tool pages.
 
@@ -12,8 +12,8 @@ The `/blog` listing and reusable `/blog/[slug]` route are implemented. The featu
 
 The static `/about` route includes section navigation and registry-derived platform status. The interactive `/contact` route accepts validated `inquiry` and `tool` URL parameters, but does not transmit or persist submissions until delivery is configured.
 
-The reusable legal layout is implemented with the draft `/privacy-policy` route. The draft uses `noindex, nofollow` and is deliberately excluded from `sitemap.xml` pending legal and production-infrastructure review.
+The reusable legal layout is implemented with the draft `/privacy-policy` and `/terms-and-conditions` routes. Both use `noindex, nofollow` and are deliberately excluded from `sitemap.xml` pending legal, operator and production-infrastructure review.
 
-Reserved for later designs: additional `/tools/[slug]` implementations, real published blog content, `/terms-and-conditions`, `/disclaimer`, and `/search`.
+Reserved for later designs: additional `/tools/[slug]` implementations, real published blog content, `/disclaimer`, and `/search`.
 
 Unimplemented destinations are not linked as functional. Shared navigation now resolves category links to their dedicated category routes.

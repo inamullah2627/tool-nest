@@ -8,6 +8,8 @@ The Contact page is implemented at `/contact` with accessible validation, inquir
 
 The reusable legal page layout and draft Privacy Policy are implemented at `/privacy-policy`, with automatic contents navigation, active-section state and a mobile accordion. The draft documents audited local processing and storage behavior, separates planned analytics/advertising from active services, and remains excluded from indexing and the sitemap. Legal entity, jurisdiction, hosting logs, retention, child-user rules, privacy-rights procedures and production providers remain unverified.
 
+Draft Terms & Conditions are implemented at `/terms-and-conditions` using the same legal layout and centralized structured content. They remain excluded from indexing and the sitemap. Operator identity, age and eligibility rules, intellectual-property ownership, warranty and liability language, governing law, dispute venue, restriction procedures, effective date and formal contact details require qualified legal review.
+
 Developer, Text and SEO category directories are active. Image, PDF and Calculators are reviewable Coming Soon pages with `noindex` metadata and are excluded from the sitemap.
 
 JSON Formatter is operational at `/tools/json-formatter`, including formatting, minification, validation, safe key sorting, syntax output, tree view, file and clipboard actions, fullscreen mode, favorites and recent activity.
