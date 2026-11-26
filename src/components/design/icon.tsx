@@ -74,6 +74,7 @@ const aliases = {
   bulb: Icons.Lightbulb,
   bug: Icons.Bug,
   send: Icons.Send,
+  eye: Icons.Eye,
 } as const;
 
 export type IconName = keyof typeof aliases;

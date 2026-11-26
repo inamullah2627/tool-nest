@@ -471,9 +471,10 @@ export function AboutPage() {
                       </li>
                     ))}
                   </ul>
-                  <a href="#privacy-note" className="about-text-link">
-                    Privacy details <Icon name="arrow" size={16} />
-                  </a>
+                  <Link href="/privacy-policy" className="about-text-link">
+                    Read our Privacy Policy draft{" "}
+                    <Icon name="arrow" size={16} />
+                  </Link>
                 </div>
                 <aside id="privacy-note" className="about-privacy-note">
                   <span className="cico">
@@ -489,8 +490,8 @@ export function AboutPage() {
                   <p>
                     Like most websites, ToolNest may use general analytics and
                     cookies, and may show advertising in the future. These work
-                    separately from your tool input. A standalone Privacy Policy
-                    page is not published yet.
+                    separately from your tool input. The current Privacy Policy
+                    is a non-indexed draft pending legal and hosting review.
                   </p>
                 </aside>
               </div>

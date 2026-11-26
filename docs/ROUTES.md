@@ -1,6 +1,6 @@
 # Routes
 
-Implemented: `/`, `/about`, `/contact`, `/tools`, `/blog`, and the shared `/tools/category/[slug]` template.
+Implemented: `/`, `/about`, `/contact`, `/privacy-policy`, `/tools`, `/blog`, and the shared `/tools/category/[slug]` template.
 
 The reusable individual-tool route `/tools/[slug]` is established. `/tools/json-formatter`, `/tools/word-counter` and `/tools/meta-tag-generator` are operational tool pages.
 
@@ -10,8 +10,10 @@ Reviewable Coming Soon routes: `/tools/category/image`, `/tools/category/pdf`, a
 
 The `/blog` listing and reusable `/blog/[slug]` route are implemented. The featured preview links to `/blog/how-to-format-and-validate-json`; this demonstration article and the listing use `noindex, nofollow` and remain excluded from the sitemap. Unknown or content-less slugs return `notFound()`.
 
-The static `/about` route includes section navigation and registry-derived platform status. The interactive `/contact` route accepts validated `inquiry` and `tool` URL parameters, but does not transmit or persist submissions until delivery is configured. Privacy Policy links continue to resolve to the About-page privacy overview.
+The static `/about` route includes section navigation and registry-derived platform status. The interactive `/contact` route accepts validated `inquiry` and `tool` URL parameters, but does not transmit or persist submissions until delivery is configured.
 
-Reserved for later designs: additional `/tools/[slug]` implementations, real published blog content, `/privacy-policy`, `/terms-and-conditions`, `/disclaimer`, and `/search`.
+The reusable legal layout is implemented with the draft `/privacy-policy` route. The draft uses `noindex, nofollow` and is deliberately excluded from `sitemap.xml` pending legal and production-infrastructure review.
+
+Reserved for later designs: additional `/tools/[slug]` implementations, real published blog content, `/terms-and-conditions`, `/disclaimer`, and `/search`.
 
 Unimplemented destinations are not linked as functional. Shared navigation now resolves category links to their dedicated category routes.

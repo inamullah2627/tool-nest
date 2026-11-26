@@ -264,7 +264,7 @@ export function DesignFooter() {
             <h3>Legal</h3>
             <ul>
               <li>
-                <Link href="/about#privacy">Privacy Policy</Link>
+                <Link href="/privacy-policy">Privacy Policy</Link>
               </li>
               <li>Terms &amp; Conditions</li>
               <li>Disclaimer</li>

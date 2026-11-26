@@ -343,7 +343,7 @@ export function ContactPage({
                     This form does not send or store your information while
                     delivery is unconfigured. Please avoid passwords or
                     sensitive details. Read our{" "}
-                    <Link href="/about#privacy">privacy overview</Link>.
+                    <Link href="/privacy-policy">Privacy Policy draft</Link>.
                   </p>
                   <button className="btn pr contact-submit" type="submit">
                     <Icon name="send" size={16} />
