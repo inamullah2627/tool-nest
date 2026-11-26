@@ -63,6 +63,13 @@ const aliases = {
   monitor: Icons.Monitor,
   phone: Icons.Smartphone,
   rotate: Icons.RotateCcw,
+  target: Icons.Target,
+  compass: Icons.Compass,
+  accessibility: Icons.Accessibility,
+  unlock: Icons.LockOpen,
+  refresh: Icons.RefreshCw,
+  penline: Icons.PenLine,
+  grad: Icons.GraduationCap,
 } as const;
 
 export type IconName = keyof typeof aliases;

@@ -84,7 +84,12 @@ export function DesignHeader() {
             >
               Blog
             </Link>
-            <Link href="/#about">About</Link>
+            <Link
+              href="/about"
+              aria-current={pathname === "/about" ? "page" : undefined}
+            >
+              About
+            </Link>
           </nav>
           <div className="rt">
             <button className="ib" aria-label="Search tools" onClick={goTools}>
@@ -168,7 +173,7 @@ export function DesignHeader() {
             ["Home", "/"],
             ["All Tools", "/tools"],
             ["Blog", "/blog"],
-            ["About", "/#about"],
+            ["About", "/about"],
           ].map(([label, href]) => (
             <Link
               className="dl"
@@ -248,17 +253,19 @@ export function DesignFooter() {
                 <Link href="/blog">Blog</Link>
               </li>
               <li>
-                <Link href="/#about">About Us</Link>
+                <Link href="/about">About Us</Link>
               </li>
               <li>
-                <Link href="/#faq">Contact Us</Link>
+                <Link href="/about#about-feedback">Contact Us</Link>
               </li>
             </ul>
           </div>
           <div>
             <h4>Legal</h4>
             <ul>
-              <li>Privacy Policy</li>
+              <li>
+                <Link href="/about#privacy">Privacy Policy</Link>
+              </li>
               <li>Terms &amp; Conditions</li>
               <li>Disclaimer</li>
             </ul>

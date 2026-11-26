@@ -12,6 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     .map((article) => `/blog/${article.slug}`);
   const paths = [
     "",
+    "/about",
     "/tools",
     ...categories
       .filter((category) => category.active)

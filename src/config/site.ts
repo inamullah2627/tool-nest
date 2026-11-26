@@ -10,9 +10,9 @@ export const siteConfig = {
     categories: "/tools/category/[slug]",
     tool: "/tools/[slug]",
     blog: "/blog",
+    about: "/about",
   },
   futureRoutes: [
-    "/about",
     "/contact",
     "/privacy-policy",
     "/terms-and-conditions",
