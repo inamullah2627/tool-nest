@@ -2,6 +2,8 @@
 
 Complete: project foundation, component-based App Router pages, shared responsive shell, themes, mobile navigation, typed registry, persistent favorites/recent state, homepage, all-tools directory, reusable category template, all six category routes, combined filters, sorting, views, empty states, metadata, sitemap, accessibility/performance QA scripts, and documentation.
 
+Global search is implemented at `/search` with URL-synchronized queries, content filters, sorting and pagination; local relevance ranking, curated synonyms and safe text highlighting; keyboard-accessible suggestions; empty states; and favorites/recent quick access. Draft articles, planned tools and inactive categories are excluded from results.
+
 The custom App Router 404 page is implemented with registry-backed search and recommendations, shared favorites, category and contact recovery actions, a safe same-origin Go Back action with homepage fallback, noindex metadata and verified HTTP 404 responses for invalid general, tool, category and article routes.
 
 The About page is implemented at `/about` with static server-rendered content, in-page navigation, registry-derived category/tool status, responsive light/dark styling and page metadata.

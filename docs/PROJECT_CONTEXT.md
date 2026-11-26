@@ -17,3 +17,7 @@ The Disclaimer is a third non-indexed legal draft. Its tool-specific statements 
 # 404 behavior
 
 Unknown routes use the App Router `src/app/not-found.tsx` convention and return HTTP 404. After hydration the recovery UI replaces the visible invalid address with `/404`, while retaining the original 404 response rather than creating a standalone 200-status route. The page reuses the shared shell, registry, directory query parameter and favorites provider and remains outside the sitemap.
+
+# Global search
+
+The `/search` route performs all matching locally against centralized static data. URL parameters preserve query/filter/sort/page state for browser navigation. Unpublished articles and unfinished destinations are omitted, and the route remains noindex and outside the sitemap.

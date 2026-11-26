@@ -12,9 +12,10 @@ export const siteConfig = {
     blog: "/blog",
     about: "/about",
     contact: "/contact",
+    search: "/search",
     privacyPolicy: "/privacy-policy",
     termsAndConditions: "/terms-and-conditions",
     disclaimer: "/disclaimer",
   },
-  futureRoutes: ["/search"],
+  futureRoutes: [],
 } as const;

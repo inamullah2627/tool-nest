@@ -50,7 +50,7 @@ export function DesignHeader() {
     return () =>
       document.removeEventListener("pointerdown", closeOnOutsideClick);
   }, []);
-  const goTools = () => router.push("/tools");
+  const goSearch = () => router.push("/search");
   return (
     <>
       <header>
@@ -92,7 +92,11 @@ export function DesignHeader() {
             </Link>
           </nav>
           <div className="rt">
-            <button className="ib" aria-label="Search tools" onClick={goTools}>
+            <button
+              className="ib"
+              aria-label="Search ToolNest"
+              onClick={goSearch}
+            >
               <Icon name="search" />
             </button>
             <button
