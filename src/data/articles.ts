@@ -515,6 +515,623 @@ const wordsToPagesArticleContent: ArticleBlock[] = [
   },
 ];
 
+const robotsTxtArticleContent: ArticleBlock[] = [
+  { type: "heading", level: 2, text: "What Is a Robots.txt File?" },
+  {
+    type: "paragraph",
+    content: [
+      "A robots.txt file is a plain-text file that gives web crawlers instructions about which parts of a website they may request. Search engines normally check this file before crawling pages. It helps you manage crawl activity, but it does not remove pages from search results and it must never be treated as a security feature.",
+    ],
+  },
+  {
+    type: "callout",
+    tone: "warning",
+    content: [
+      { type: "strong", text: "Important: " },
+      "Robots.txt rules are public and voluntary. Use authentication or server permissions—not robots.txt—to protect private content.",
+    ],
+  },
+  { type: "heading", level: 2, text: "Where Should Robots.txt Be Located?" },
+  {
+    type: "paragraph",
+    content: [
+      "Place the file at the root of the exact host and protocol it controls. For example, the robots.txt file for https://example.com must be available at https://example.com/robots.txt. A file stored in /blog/robots.txt does not control the full site, and subdomains such as shop.example.com need their own files.",
+    ],
+  },
+  { type: "heading", level: 2, text: "How to Create a Robots.txt File" },
+  {
+    type: "paragraph",
+    content: [
+      "You can create robots.txt with any plain-text editor. The filename must be lowercase and end in .txt. Do not save it as a rich-text document or as robots.txt.txt.",
+    ],
+  },
+  {
+    type: "list",
+    ordered: true,
+    items: [
+      [
+        "Open a plain-text editor such as Notepad, VS Code, or TextEdit in plain-text mode.",
+      ],
+      ["Add a User-agent line to identify the crawler the rule applies to."],
+      ["Add Allow or Disallow rules on separate lines."],
+      ["Optionally add the absolute URL of your XML sitemap."],
+      ["Save the file as robots.txt using UTF-8 encoding."],
+      [
+        "Upload it to the root directory and open /robots.txt in a browser to confirm it is publicly accessible.",
+      ],
+    ],
+  },
+  { type: "heading", level: 2, text: "Robots.txt Syntax Explained" },
+  {
+    type: "paragraph",
+    content: [
+      "A robots.txt group begins with User-agent and is followed by one or more rules. A blank line separates groups. Directive names are not case-sensitive, but paths can be case-sensitive depending on your server, so copy URL paths exactly.",
+    ],
+  },
+  {
+    type: "list",
+    items: [
+      [
+        { type: "strong", text: "User-agent: " },
+        "selects a crawler. An asterisk applies the group to all crawlers that do not have a more specific group.",
+      ],
+      [
+        { type: "strong", text: "Disallow: " },
+        "asks the selected crawler not to request matching paths.",
+      ],
+      [
+        { type: "strong", text: "Allow: " },
+        "permits a more specific path inside a broader disallowed directory when supported.",
+      ],
+      [
+        { type: "strong", text: "Sitemap: " },
+        "points crawlers to an XML sitemap using an absolute URL.",
+      ],
+    ],
+  },
+  { type: "heading", level: 2, text: "Basic Robots.txt Example" },
+  {
+    type: "paragraph",
+    content: [
+      "This example allows crawlers to access the public website, asks them not to crawl the private and temporary directories, and identifies the sitemap:",
+    ],
+  },
+  {
+    type: "code",
+    language: "text",
+    label: "robots.txt · basic example",
+    code: "User-agent: *\nDisallow: /private/\nDisallow: /temp/\n\nSitemap: https://example.com/sitemap.xml",
+  },
+  { type: "heading", level: 2, text: "Useful Robots.txt Examples" },
+  { type: "heading", level: 3, text: "Allow all crawlers" },
+  {
+    type: "paragraph",
+    content: [
+      "An empty Disallow value means there are no crawl restrictions for that group.",
+    ],
+  },
+  {
+    type: "code",
+    language: "text",
+    label: "robots.txt · allow all",
+    code: "User-agent: *\nDisallow:",
+  },
+  { type: "heading", level: 3, text: "Block all crawling" },
+  {
+    type: "paragraph",
+    content: [
+      "The following rule asks compliant crawlers not to request any URL on the host. Use it carefully, especially on production websites.",
+    ],
+  },
+  {
+    type: "code",
+    language: "text",
+    label: "robots.txt · block all",
+    code: "User-agent: *\nDisallow: /",
+  },
+  { type: "heading", level: 3, text: "Block a folder but allow one file" },
+  {
+    type: "code",
+    language: "text",
+    label: "robots.txt · allow exception",
+    code: "User-agent: *\nDisallow: /resources/\nAllow: /resources/public-guide.pdf",
+  },
+  { type: "heading", level: 3, text: "Create a rule for one crawler" },
+  {
+    type: "paragraph",
+    content: [
+      "Replace ExampleBot with the documented user-agent token of the crawler you want to address.",
+    ],
+  },
+  {
+    type: "code",
+    language: "text",
+    label: "robots.txt · specific crawler",
+    code: "User-agent: ExampleBot\nDisallow: /",
+  },
+  { type: "heading", level: 2, text: "Robots.txt for SEO" },
+  {
+    type: "paragraph",
+    content: [
+      "For SEO, robots.txt is most useful for reducing unnecessary crawling of duplicate filters, internal search pages, temporary files, or low-value URL patterns. This can help crawlers spend more time on pages you want discovered, particularly on large websites.",
+    ],
+  },
+  {
+    type: "paragraph",
+    content: [
+      "Do not block CSS, JavaScript, or image resources that search engines need to render important pages. Also remember that blocking crawling is different from preventing indexing: a blocked URL can still appear in results if other pages link to it. Use a noindex directive in page HTML or an X-Robots-Tag response header when you need supported search engines to exclude a page from their index.",
+    ],
+  },
+  { type: "heading", level: 2, text: "How to Generate Robots.txt" },
+  {
+    type: "paragraph",
+    content: [
+      "A generator can help assemble common directives and reduce typing mistakes. ToolNest lists a Robots.txt Generator in its SEO catalog, but its processing interface is still coming soon. Until it is operational, create and review the plain-text file manually using the examples above.",
+    ],
+  },
+  { type: "tool-cta", toolId: "robots-txt-generator" },
+  { type: "heading", level: 2, text: "Common Robots.txt Mistakes" },
+  {
+    type: "list",
+    items: [
+      [
+        { type: "strong", text: "Uploading it to the wrong location. " },
+        "Only the root-level /robots.txt file applies to that host.",
+      ],
+      [
+        { type: "strong", text: "Blocking the entire live site. " },
+        "A leftover Disallow: / rule from staging can stop normal crawling.",
+      ],
+      [
+        { type: "strong", text: "Using robots.txt for private data. " },
+        "The file itself reveals the listed paths to anyone who opens it.",
+      ],
+      [
+        { type: "strong", text: "Expecting it to remove indexed URLs. " },
+        "Crawl controls and indexing controls solve different problems.",
+      ],
+      [
+        { type: "strong", text: "Writing incomplete paths. " },
+        "A missing slash or incorrect letter case can change which URLs match.",
+      ],
+    ],
+  },
+  { type: "heading", level: 2, text: "Test and Monitor Your File" },
+  {
+    type: "paragraph",
+    content: [
+      "After publishing the file, request its URL in a browser and verify that the server returns a successful response with plain text. Test important allowed and blocked paths with the robots.txt tools offered by the search engines you target. Recheck the file after migrations, staging deployments, or URL-structure changes.",
+    ],
+  },
+  { type: "divider" },
+  { type: "heading", level: 2, text: "Conclusion" },
+  {
+    type: "paragraph",
+    content: [
+      "To create a robots.txt file, write plain-text crawler groups, save the file with the exact lowercase filename, upload it to the site's root, and test every important rule. Keep the file as simple as possible, include your sitemap when useful, and use proper access or indexing controls for anything robots.txt cannot protect.",
+    ],
+  },
+];
+
+const removeDuplicateLinesArticleContent: ArticleBlock[] = [
+  { type: "heading", level: 2, text: "What Are Duplicate Lines?" },
+  {
+    type: "paragraph",
+    content: [
+      "Duplicate lines are repeated rows that contain the same text. They often appear after combining email lists, copying spreadsheet columns, merging exports, collecting keywords, or pasting log data. Removing repeated lines makes the result shorter, easier to review, and safer to import into another system.",
+    ],
+  },
+  {
+    type: "quote",
+    text: "A clean unique list keeps the first useful entry and removes unnecessary repetitions.",
+  },
+  { type: "heading", level: 2, text: "How to Remove Duplicate Lines Quickly" },
+  {
+    type: "paragraph",
+    content: [
+      "The fastest workflow is to place one item on each line, choose how matching should work, remove duplicates, and review the cleaned output before replacing the original data.",
+    ],
+  },
+  {
+    type: "list",
+    ordered: true,
+    items: [
+      ["Keep a backup of the original text."],
+      ["Paste the list into a duplicate-line remover or text editor."],
+      [
+        "Choose whether the comparison should ignore letter case or surrounding spaces.",
+      ],
+      ["Remove repeated lines while preserving the first occurrence."],
+      ["Check the result, then copy or download the cleaned list."],
+    ],
+  },
+  { type: "heading", level: 2, text: "Example: Before and After" },
+  {
+    type: "paragraph",
+    content: [
+      "In this example, apple and banana each appear twice. A standard cleanup keeps their first occurrence and preserves the original order.",
+    ],
+  },
+  {
+    type: "code",
+    language: "text",
+    label: "Text · before cleanup",
+    code: "apple\nbanana\napple\norange\nbanana",
+  },
+  {
+    type: "code",
+    language: "text",
+    label: "Text · after cleanup",
+    code: "apple\nbanana\norange",
+  },
+  { type: "heading", level: 2, text: "Exact Matches vs. Normalized Matches" },
+  {
+    type: "paragraph",
+    content: [
+      "Before deleting duplicate entries, decide what counts as the same line. Exact matching treats every character as significant. Normalized matching can ignore differences that are visually easy to miss.",
+    ],
+  },
+  {
+    type: "table",
+    headers: ["Comparison option", "Result", "Useful for"],
+    rows: [
+      [
+        "Exact match",
+        "Apple and apple stay separate",
+        "IDs, codes, case-sensitive data",
+      ],
+      [
+        "Ignore case",
+        "Apple and apple are duplicates",
+        "Names, tags, general lists",
+      ],
+      [
+        "Trim spaces",
+        "item and item␠ are duplicates",
+        "Copied or exported text",
+      ],
+      [
+        "Ignore blank lines",
+        "Empty rows are removed",
+        "Documents with uneven spacing",
+      ],
+    ],
+  },
+  {
+    type: "callout",
+    tone: "warning",
+    content: [
+      { type: "strong", text: "Review case-sensitive data carefully. " },
+      "Product codes, usernames, file paths, and identifiers may look similar while representing different values.",
+    ],
+  },
+  { type: "heading", level: 2, text: "Remove Duplicate Text Online" },
+  {
+    type: "paragraph",
+    content: [
+      "An online cleaner is convenient for ordinary non-sensitive lists because it avoids formulas and scripts. ToolNest includes Remove Duplicate Lines in its text-tools catalog, but the processing interface is still planned. Until it becomes operational, use a trusted local editor or one of the manual methods below.",
+    ],
+  },
+  { type: "tool-cta", toolId: "remove-duplicate-lines" },
+  { type: "heading", level: 2, text: "Remove Repeated Lines in VS Code" },
+  {
+    type: "paragraph",
+    content: [
+      "VS Code can remove duplicate lines with a suitable extension, or you can sort the lines and inspect repeated neighbors. If you sort first, remember that the original order changes. Always work on a copy when sequence matters.",
+    ],
+  },
+  {
+    type: "list",
+    ordered: true,
+    items: [
+      ["Select the lines you want to clean."],
+      ["Open the Command Palette."],
+      ["Run a trusted extension command for unique or duplicate lines."],
+      [
+        "Review the diff and undo the operation if meaningful variants were removed.",
+      ],
+    ],
+  },
+  {
+    type: "heading",
+    level: 2,
+    text: "Remove Duplicate Entries in Excel or Google Sheets",
+  },
+  {
+    type: "paragraph",
+    content: [
+      "For spreadsheet data, place the values in one column and use the built-in duplicate-removal feature. In Excel, select the range and choose Data, then Remove Duplicates. In Google Sheets, select the range and choose Data, Data cleanup, then Remove duplicates. Confirm whether the first row is a header before applying the change.",
+    ],
+  },
+  { type: "heading", level: 2, text: "Remove Duplicate Lines with JavaScript" },
+  {
+    type: "paragraph",
+    content: [
+      "Developers can split text into lines, place the lines in a Set, and join them again. A Set preserves insertion order, so the first occurrence remains in its original position.",
+    ],
+  },
+  {
+    type: "code",
+    language: "javascript",
+    label: "JavaScript · preserve first occurrence",
+    code: 'const uniqueText = [...new Set(text.split(/\\r?\\n/))].join("\\n");',
+  },
+  {
+    type: "paragraph",
+    content: [
+      "For case-insensitive cleanup, keep a separate normalized key for comparison instead of lowercasing the final output. That approach removes repeated values without changing the capitalization of the first line you keep.",
+    ],
+  },
+  { type: "heading", level: 2, text: "Common Cleanup Mistakes" },
+  {
+    type: "list",
+    items: [
+      [
+        { type: "strong", text: "Removing near-duplicates automatically. " },
+        "Similar lines are not always true duplicates.",
+      ],
+      [
+        { type: "strong", text: "Changing the order unintentionally. " },
+        "Sorting makes duplicates easier to see but may damage an ordered list.",
+      ],
+      [
+        { type: "strong", text: "Ignoring invisible whitespace. " },
+        "Tabs and trailing spaces can prevent visually identical lines from matching.",
+      ],
+      [
+        { type: "strong", text: "Cleaning sensitive text online. " },
+        "Use a local tool for passwords, customer data, private URLs, or confidential records.",
+      ],
+      [
+        { type: "strong", text: "Overwriting the source immediately. " },
+        "Keep a backup until you verify the unique list.",
+      ],
+    ],
+  },
+  { type: "heading", level: 2, text: "Best Practices for Clean Unique Lists" },
+  {
+    type: "list",
+    items: [
+      ["Define whether matching should ignore case, spaces, or blank rows."],
+      ["Preserve the first occurrence when the original sequence has meaning."],
+      ["Record the number of removed lines for large data-cleaning jobs."],
+      ["Spot-check the output before importing it into another application."],
+      ["Keep raw source data separate from the cleaned version."],
+    ],
+  },
+  { type: "divider" },
+  { type: "heading", level: 2, text: "Conclusion" },
+  {
+    type: "paragraph",
+    content: [
+      "To remove duplicate lines safely, decide how matches should be compared, preserve the order when necessary, and verify the cleaned list before replacing your source. A dedicated remover is ideal for quick cleanup, while spreadsheets, editors, and a small JavaScript Set provide reliable alternatives for repeated workflows.",
+    ],
+  },
+];
+
+const reduceImageSizeArticleContent: ArticleBlock[] = [
+  {
+    type: "heading",
+    level: 2,
+    text: "Can You Reduce Image Size Without Losing Quality?",
+  },
+  {
+    type: "paragraph",
+    content: [
+      "Yes—up to a point. Lossless compression can reduce file size without changing image data, while carefully chosen lossy compression removes detail that most viewers will not notice. The practical goal is usually to preserve visible quality at the image's intended display size, not to guarantee that every pixel remains identical.",
+    ],
+  },
+  {
+    type: "callout",
+    tone: "info",
+    content: [
+      { type: "strong", text: "Best first step: " },
+      "Resize an oversized image to the dimensions it will actually use before lowering its quality setting.",
+    ],
+  },
+  { type: "heading", level: 2, text: "How Image Compression Works" },
+  {
+    type: "paragraph",
+    content: [
+      "An image's file size depends on its pixel dimensions, format, compression level, color complexity, transparency, and metadata. Compression encodes the same visual information more efficiently or discards less noticeable information to save additional space.",
+    ],
+  },
+  {
+    type: "table",
+    headers: ["Method", "Quality impact", "Best use"],
+    rows: [
+      [
+        "Resize dimensions",
+        "None at the intended display size",
+        "Images larger than their layout",
+      ],
+      [
+        "Lossless compression",
+        "No image-data loss",
+        "Graphics, screenshots, archival copies",
+      ],
+      [
+        "Lossy compression",
+        "Adjustable and often subtle",
+        "Photos and web delivery",
+      ],
+      ["Remove metadata", "No visible change", "Camera photos with EXIF data"],
+      [
+        "Change format",
+        "Depends on settings",
+        "Modern browser and app delivery",
+      ],
+    ],
+  },
+  { type: "heading", level: 2, text: "How to Reduce Image Size in KB" },
+  {
+    type: "paragraph",
+    content: [
+      "Use a copy of the original so you can compare results or start again with different settings. Then follow this order to avoid unnecessary quality loss:",
+    ],
+  },
+  {
+    type: "list",
+    ordered: true,
+    items: [
+      ["Check the image's current dimensions and file size."],
+      [
+        "Resize the width and height to the largest dimensions you actually need.",
+      ],
+      [
+        "Choose a suitable output format: JPEG or WebP for photos, PNG for graphics that need lossless detail or transparency.",
+      ],
+      ["Start with a high quality setting and compress the copy."],
+      ["Compare the result at 100% zoom and at its real display size."],
+      [
+        "Lower the quality gradually until the file reaches the target size without visible artifacts.",
+      ],
+    ],
+  },
+  { type: "heading", level: 2, text: "Choose the Right Image Format" },
+  {
+    type: "paragraph",
+    content: [
+      "The output format can make a major difference. A format suited to the image type often produces a smaller file than aggressive compression in the wrong format.",
+    ],
+  },
+  {
+    type: "list",
+    items: [
+      [
+        { type: "strong", text: "JPEG: " },
+        "a strong choice for photographs and detailed images without transparency. It supports adjustable lossy compression.",
+      ],
+      [
+        { type: "strong", text: "PNG: " },
+        "best for logos, interface screenshots, sharp graphics, and transparency, but large photos can become heavy.",
+      ],
+      [
+        { type: "strong", text: "WebP: " },
+        "supports lossy and lossless compression and often creates smaller web images than JPEG or PNG.",
+      ],
+      [
+        { type: "strong", text: "AVIF: " },
+        "can deliver excellent compression for modern browsers, although encoding and compatibility requirements should be checked for your workflow.",
+      ],
+    ],
+  },
+  { type: "heading", level: 2, text: "How to Compress an Image for the Web" },
+  {
+    type: "paragraph",
+    content: [
+      "For websites, match the exported dimensions to the largest rendered size. A 4,000-pixel camera photo does not need to remain 4,000 pixels wide if the layout never displays it above 1,200 pixels. Responsive sites can also provide multiple image widths so smaller screens do not download the desktop version.",
+    ],
+  },
+  {
+    type: "list",
+    items: [
+      ["Crop unused areas before export."],
+      ["Use sRGB color for predictable web display."],
+      ["Remove unnecessary EXIF metadata."],
+      ["Export photos as WebP or a well-compressed JPEG."],
+      ["Keep a lossless original outside the website's public assets."],
+    ],
+  },
+  { type: "heading", level: 2, text: "Reduce Image Size to 100KB" },
+  {
+    type: "paragraph",
+    content: [
+      "A 100KB target is achievable for many profile photos, thumbnails, and small web images. Resize first—often to approximately 800 to 1,200 pixels on the longest edge, depending on detail—then export as WebP or JPEG. Begin around a high quality level and reduce it in small steps while watching hair, text, gradients, and high-contrast edges for artifacts.",
+    ],
+  },
+  {
+    type: "callout",
+    tone: "warning",
+    content: [
+      {
+        type: "strong",
+        text: "A fixed KB target cannot guarantee fixed quality. ",
+      },
+      "A simple portrait may compress cleanly to 100KB, while a detailed landscape at the same dimensions may need more data.",
+    ],
+  },
+  { type: "heading", level: 2, text: "Reduce Image Size to 200KB" },
+  {
+    type: "paragraph",
+    content: [
+      "A 200KB limit gives more room for larger dimensions or complex detail. It is a practical target for many article images, application uploads, and medium-sized web photos. Use the same resize-first workflow, then adjust compression until the result falls below the limit with a small safety margin.",
+    ],
+  },
+  { type: "heading", level: 2, text: "How to Reduce JPG File Size" },
+  {
+    type: "paragraph",
+    content: [
+      "JPG files respond well to three changes: smaller pixel dimensions, a lower quality setting, and removal of metadata. Avoid repeatedly opening and saving the same JPG because every lossy re-encode can introduce additional artifacts. Return to the original file for each new export.",
+    ],
+  },
+  {
+    type: "paragraph",
+    content: [
+      "If a photograph still exceeds the limit, compare a WebP export. If the image contains text, logos, or large flat color areas, also compare PNG or lossless WebP because JPEG artifacts may be more noticeable around sharp edges.",
+    ],
+  },
+  { type: "heading", level: 2, text: "Use an Image Compressor" },
+  {
+    type: "paragraph",
+    content: [
+      "A dedicated compressor can combine resizing, format conversion, quality adjustment, and metadata removal in one workflow. ToolNest lists an Image Compressor in its image-tools catalog, but its processing interface is still planned. Until it is operational, use a trusted local image editor or an established compressor that clearly explains how files are handled.",
+    ],
+  },
+  { type: "tool-cta", toolId: "image-compressor" },
+  { type: "heading", level: 2, text: "How to Compare Image Quality" },
+  {
+    type: "paragraph",
+    content: [
+      "File size alone does not tell you whether an image is usable. Compare the source and result side by side at the final display size, then inspect the compressed copy at 100% zoom. Look closely at faces, fine textures, text, shadows, gradients, and edges around objects.",
+    ],
+  },
+  {
+    type: "list",
+    items: [
+      ["Check for blocky squares in detailed areas."],
+      ["Look for color bands in skies and smooth gradients."],
+      ["Inspect halos or ringing around sharp edges."],
+      ["Confirm that small text remains readable."],
+      ["Test transparency if the output format supports it."],
+    ],
+  },
+  { type: "heading", level: 2, text: "Common Image Compression Mistakes" },
+  {
+    type: "list",
+    items: [
+      [
+        { type: "strong", text: "Compressing before resizing. " },
+        "Unused pixels make it harder to reach a small file target cleanly.",
+      ],
+      [
+        { type: "strong", text: "Using JPEG for transparency. " },
+        "JPEG does not preserve transparent backgrounds.",
+      ],
+      [
+        { type: "strong", text: "Chasing the smallest possible file. " },
+        "Extra savings are not worthwhile when visible artifacts damage the image.",
+      ],
+      [
+        { type: "strong", text: "Overwriting the original. " },
+        "Keep a high-quality master for future sizes and formats.",
+      ],
+      [
+        { type: "strong", text: "Judging only while zoomed in. " },
+        "Also inspect the image at the size people will actually see it.",
+      ],
+    ],
+  },
+  { type: "divider" },
+  { type: "heading", level: 2, text: "Conclusion" },
+  {
+    type: "paragraph",
+    content: [
+      "To reduce image size in KB without noticeable quality loss, resize to the required dimensions, select the right format, remove unnecessary metadata, and lower compression quality gradually. Compare every result at its real display size, keep the original, and stop compressing once further savings become visibly destructive.",
+    ],
+  },
+];
+
 export const articles: Article[] = [
   {
     id: "article-json-formatting",
@@ -607,19 +1224,32 @@ export const articles: Article[] = [
     content: wordsToPagesArticleContent,
   },
   {
-    id: "article-seo-metadata",
-    slug: "better-seo-titles-and-meta-descriptions",
-    title: "How to Write Better SEO Titles and Meta Descriptions",
+    id: "article-robots-txt",
+    slug: "how-to-create-robots-txt-file",
+    title: "How to Create a Robots.txt File for Your Website",
     excerpt:
-      "Practical ways to write clear, accurate titles and descriptions that help people decide to click.",
+      "Learn how to create a robots.txt file, understand its syntax, avoid common SEO mistakes, and publish it in the correct location.",
     category: "seo",
     cover: "seo",
+    featuredImage: "/blog/how-to-create-robots-txt-file.png",
+    featuredImageAlt:
+      "A robots.txt document directing a crawler toward allowed and blocked website sections",
     author: "ToolNest Editorial",
-    publishedAt: "2026-09-22",
-    readingMinutes: 6,
+    publishedAt: "2026-11-24",
+    readingMinutes: 8,
     featured: false,
-    relatedToolIds: ["meta-tag-generator"],
-    status: "draft",
+    relatedToolIds: ["robots-txt-generator"],
+    status: "published",
+    updatedAt: "2026-11-24",
+    tags: [
+      "Robots.txt",
+      "Technical SEO",
+      "Search Crawlers",
+      "Website Indexing",
+      "SEO Guide",
+    ],
+    relatedArticleIds: ["article-canonical"],
+    content: robotsTxtArticleContent,
   },
   {
     id: "article-canonical",
@@ -667,33 +1297,57 @@ export const articles: Article[] = [
     status: "draft",
   },
   {
-    id: "article-url-slugs",
-    slug: "create-seo-friendly-url-slugs",
-    title: "How to Create SEO-Friendly URL Slugs",
+    id: "article-reduce-image-size",
+    slug: "how-to-reduce-image-size-in-kb",
+    title: "How to Reduce Image Size in KB Without Losing Quality",
     excerpt:
-      "Turn page titles into short, readable URLs, with simple rules for hyphens, case and special characters.",
+      "Learn how to compress an image, reduce JPG file size, and reach 100KB or 200KB targets while preserving visible quality.",
     category: "tutorials",
     cover: "slug",
+    featuredImage: "/blog/how-to-reduce-image-size-in-kb.png",
+    featuredImageAlt:
+      "A large 2.4 MB landscape image compressed into a visually identical 200 KB image",
     author: "ToolNest Editorial",
-    publishedAt: "2026-08-25",
-    readingMinutes: 4,
+    publishedAt: "2026-11-22",
+    readingMinutes: 8,
     featured: false,
-    relatedToolIds: ["meta-tag-generator"],
-    status: "draft",
+    relatedToolIds: ["image-compressor"],
+    status: "published",
+    updatedAt: "2026-11-22",
+    tags: [
+      "Image Compression",
+      "Reduce Image Size",
+      "JPG Compression",
+      "Web Images",
+      "Image Optimization",
+    ],
+    content: reduceImageSizeArticleContent,
   },
   {
-    id: "article-productivity",
-    slug: "simplify-daily-workflow-with-online-tools",
-    title: "Simplify Your Daily Workflow with Online Tools",
+    id: "article-remove-duplicate-lines",
+    slug: "how-to-remove-duplicate-lines",
+    title: "How to Remove Duplicate Lines From Text Quickly",
     excerpt:
-      "Small utilities can remove repetitive steps from your day. Here is how to build a lightweight toolkit.",
+      "Learn how to remove repeated lines, delete duplicate entries safely, preserve list order, and clean duplicate text efficiently.",
     category: "productivity",
     cover: "workflow",
+    featuredImage: "/blog/how-to-remove-duplicate-lines.png",
+    featuredImageAlt:
+      "A before-and-after text list with repeated lines removed into a clean unique list",
     author: "ToolNest Editorial",
-    publishedAt: "2026-08-18",
-    readingMinutes: 5,
+    publishedAt: "2026-11-23",
+    readingMinutes: 7,
     featured: false,
-    relatedToolIds: ["word-counter"],
-    status: "draft",
+    relatedToolIds: ["remove-duplicate-lines"],
+    status: "published",
+    updatedAt: "2026-11-23",
+    tags: [
+      "Remove Duplicate Lines",
+      "Text Cleanup",
+      "Unique Lists",
+      "Productivity",
+      "Data Cleaning",
+    ],
+    content: removeDuplicateLinesArticleContent,
   },
 ];

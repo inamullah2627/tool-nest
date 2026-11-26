@@ -5,12 +5,12 @@ import { filterAndSortArticles, paginateArticles } from "./articles";
 describe("blog article listing", () => {
   it("filters by category and every search word", () => {
     const result = filterAndSortArticles(articles, {
-      search: "meta descriptions",
+      search: "robots website",
       category: "seo",
       sort: "newest",
     });
     expect(result.map((article) => article.slug)).toEqual([
-      "better-seo-titles-and-meta-descriptions",
+      "how-to-create-robots-txt-file",
     ]);
   });
 
@@ -20,7 +20,7 @@ describe("blog article listing", () => {
       category: "all",
       sort: "oldest",
     });
-    expect(oldest[0].publishedAt).toBe("2026-08-18");
+    expect(oldest[0].publishedAt).toBe("2026-09-01");
     const alphabetical = filterAndSortArticles(articles, {
       search: "",
       category: "all",

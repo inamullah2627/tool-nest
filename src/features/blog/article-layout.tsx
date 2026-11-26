@@ -462,43 +462,98 @@ function ContextualToolCta({ toolId }: { toolId: string }) {
   const tool = tools.find((item) => item.id === toolId);
   if (!tool) return null;
   const isWordCounter = tool.id === "word-counter";
+  const isRobotsGenerator = tool.id === "robots-txt-generator";
+  const isDuplicateRemover = tool.id === "remove-duplicate-lines";
+  const isImageCompressor = tool.id === "image-compressor";
+  const operational = tool.implementationStatus === "operational";
   return (
     <aside className="atc">
       <span className="cico">
-        <Icon name={isWordCounter ? "type" : "braces"} size={22} />
+        <Icon
+          name={
+            isWordCounter
+              ? "type"
+              : isRobotsGenerator
+                ? "search"
+                : isDuplicateRemover
+                  ? "copy"
+                  : isImageCompressor
+                    ? "image"
+                    : "braces"
+          }
+          size={22}
+        />
       </span>
       <div>
         <h4>
           {isWordCounter
             ? "Count Your Words Instantly"
-            : "Format Your JSON in Seconds"}
+            : isRobotsGenerator
+              ? "Robots.txt Generator"
+              : isDuplicateRemover
+                ? "Remove Duplicate Lines"
+                : isImageCompressor
+                  ? "Image Compressor"
+                  : "Format Your JSON in Seconds"}
         </h4>
         <p>
           {isWordCounter
             ? "Check words, characters, sentences and reading time in your browser."
-            : "Beautify, validate and minify JSON directly in your browser."}
+            : isRobotsGenerator
+              ? "This catalog tool is planned, but its processing interface is not available yet."
+              : isDuplicateRemover
+                ? "This catalog tool is planned, but its text-cleaning interface is not available yet."
+                : isImageCompressor
+                  ? "This catalog tool is planned, but its image-processing interface is not available yet."
+                  : "Beautify, validate and minify JSON directly in your browser."}
         </p>
       </div>
-      <Link href={`/tools/${tool.slug}`} className="btn pr">
-        Try {tool.name}
-      </Link>
+      {operational ? (
+        <Link href={`/tools/${tool.slug}`} className="btn pr">
+          Try {tool.name}
+        </Link>
+      ) : (
+        <span className="btn blog-disabled-action" aria-disabled="true">
+          Coming Soon
+        </span>
+      )}
     </aside>
   );
 }
 
 function SidebarTool({ tool }: { tool: (typeof tools)[number] }) {
   const category = categoryMap[tool.category];
+  const operational = tool.implementationStatus === "operational";
   return (
     <article className="tc article-sidebar-tool">
       <span className="cico">
-        <Icon name={tool.id === "word-counter" ? "type" : "braces"} size={22} />
+        <Icon
+          name={
+            tool.id === "word-counter"
+              ? "type"
+              : tool.id === "robots-txt-generator"
+                ? "search"
+                : tool.id === "remove-duplicate-lines"
+                  ? "copy"
+                  : tool.id === "image-compressor"
+                    ? "image"
+                    : "braces"
+          }
+          size={22}
+        />
       </span>
       <span className="cat">{category.name}</span>
       <h3>{tool.name}</h3>
       <p>{tool.shortDescription}</p>
-      <Link href={`/tools/${tool.slug}`} className="btn pr">
-        Try {tool.name}
-      </Link>
+      {operational ? (
+        <Link href={`/tools/${tool.slug}`} className="btn pr">
+          Try {tool.name}
+        </Link>
+      ) : (
+        <span className="btn blog-disabled-action" aria-disabled="true">
+          Coming Soon
+        </span>
+      )}
     </article>
   );
 }
