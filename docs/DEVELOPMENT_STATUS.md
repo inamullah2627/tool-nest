@@ -10,6 +10,6 @@ Word Counter is operational at `/tools/word-counter`, including live Unicode-awa
 
 Meta Tag Generator is operational at `/tools/meta-tag-generator`, including escaped HTML generation, local HTTP(S) URL validation, advanced robots/author/charset/viewport controls, illustrative desktop/mobile previews, SEO guidance, code export, fullscreen mode, favorites and recent activity. Entered metadata is not persisted and no external site or SEO API is contacted. Other catalog tools remain unavailable.
 
-The Blog listing is implemented at `/blog` with typed local sample data, featured content, search, categories, sorting, pagination, empty states and related operational tools. All articles remain drafts, so no detail links exist and the listing is `noindex, nofollow` and excluded from the sitemap.
+The Blog listing is implemented at `/blog` with typed local sample data, featured content, search, categories, sorting, pagination, empty states and related operational tools. A reusable detail layout and the demonstration article `/blog/how-to-format-and-validate-json` support structured content, automatic contents navigation, reading progress, code copy, sharing and related content. All articles remain drafts, so the listing and sample detail are `noindex, nofollow` and excluded from the sitemap.
 
-Pending by scope: remaining tool processors, real published articles and detail routes, content/legal routes, advertisements, robots policy, and deployment.
+Pending by scope: remaining tool processors, real reviewed articles, content/legal routes, advertisements, robots policy, and deployment.

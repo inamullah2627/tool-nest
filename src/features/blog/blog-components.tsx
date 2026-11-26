@@ -1,9 +1,11 @@
+import Link from "next/link";
 import { Icon } from "@/components/design/icon";
 import {
   articleCategories,
   type Article,
   type ArticleCover,
 } from "@/data/articles";
+import { getArticleReadingTime } from "@/lib/blog/article-content";
 
 export function ArticleCard({ article }: { article: Article }) {
   const category = articleCategories[article.category];
@@ -22,11 +24,21 @@ export function ArticleCard({ article }: { article: Article }) {
           <span className="cat">{category.name}</span>
           <span className="mini">Preview</span>
         </div>
-        <h3>{article.title}</h3>
+        <h3>
+          {article.content ? (
+            <Link className="blog-article-link" href={`/blog/${article.slug}`}>
+              {article.title}
+            </Link>
+          ) : (
+            article.title
+          )}
+        </h3>
         <p className="bex">{article.excerpt}</p>
         <div className="bfoot">
           <ArticleMetadata article={article} />
-          <span className="blog-coming">Article coming soon</span>
+          <span className="blog-coming">
+            {article.content ? "Read sample article" : "Article coming soon"}
+          </span>
         </div>
       </div>
     </article>
@@ -55,7 +67,11 @@ export function FeaturedArticle({ article }: { article: Article }) {
           </span>
           <span className="cat">{category.name}</span>
         </div>
-        <h2>{article.title}</h2>
+        <h2>
+          <Link className="blog-article-link" href={`/blog/${article.slug}`}>
+            {article.title}
+          </Link>
+        </h2>
         <p className="bex">{article.excerpt}</p>
         <div className="au">
           <span className="av" aria-hidden="true">
@@ -67,9 +83,9 @@ export function FeaturedArticle({ article }: { article: Article }) {
           </div>
         </div>
         <ArticleMetadata article={article} />
-        <span className="btn pr blog-disabled-action" aria-disabled="true">
-          Article Coming Soon
-        </span>
+        <Link className="btn pr" href={`/blog/${article.slug}`}>
+          Read Sample Article <Icon name="arrow" size={16} />
+        </Link>
       </div>
     </article>
   );
@@ -84,7 +100,7 @@ export function ArticleMetadata({ article }: { article: Article }) {
       </span>
       <span>
         <Icon name="clock" size={14} />
-        {article.readingMinutes} min read
+        {getArticleReadingTime(article)} min read
       </span>
     </span>
   );
@@ -152,7 +168,7 @@ export function BlogPagination({
   );
 }
 
-function ArticleCoverArt({
+export function ArticleCoverArt({
   cover,
   color,
   label,

@@ -8,8 +8,8 @@ Active indexed category routes: `/tools/category/developer`, `/tools/category/te
 
 Reviewable Coming Soon routes: `/tools/category/image`, `/tools/category/pdf`, and `/tools/category/calculators`. These routes are marked `noindex` and excluded from `sitemap.xml`.
 
-The `/blog` listing is implemented as an unpublished design preview with `noindex, nofollow`. `/blog/[slug]` remains reserved and no draft article links target it.
+The `/blog` listing and reusable `/blog/[slug]` route are implemented. The featured preview links to `/blog/how-to-format-and-validate-json`; this demonstration article and the listing use `noindex, nofollow` and remain excluded from the sitemap. Unknown or content-less slugs return `notFound()`.
 
-Reserved for later designs: additional `/tools/[slug]` implementations, `/blog/[slug]`, `/about`, `/contact`, `/privacy-policy`, `/terms-and-conditions`, `/disclaimer`, and `/search`.
+Reserved for later designs: additional `/tools/[slug]` implementations, real published blog content, `/about`, `/contact`, `/privacy-policy`, `/terms-and-conditions`, `/disclaimer`, and `/search`.
 
 Unimplemented destinations are not linked as functional. Shared navigation now resolves category links to their dedicated category routes.

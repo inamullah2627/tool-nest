@@ -8,4 +8,4 @@ Category directories share one client feature template and typed configuration, 
 
 Individual utilities use the reusable `ToolPageLayout` under `/tools/[slug]`. Each tool keeps its workspace and pure processing logic isolated. JSON Formatter runs parsing and serialization in a dedicated browser Web Worker; no input is sent to a server or persisted locally.
 
-The blog listing uses typed static data from `src/data/articles.ts`, reusable components under `src/features/blog`, and pure filter/sort/pagination helpers under `src/lib/blog`. Article records include future-ready slugs and publication status, but detail routes are not created for draft content.
+The blog uses typed static data from `src/data/articles.ts`, reusable components under `src/features/blog`, and pure listing/content helpers under `src/lib/blog`. Structured article blocks are rendered as React elements without parsing arbitrary HTML. Publication status controls indexing, sitemap inclusion and Article structured data.
