@@ -33,7 +33,10 @@ describe("global search", () => {
 
   it("excludes planned tools, inactive categories and unpublished articles", () => {
     const index = getGlobalSearchIndex();
-    expect(index.some((item) => item.id === "html-formatter")).toBe(false);
+    expect(index.some((item) => item.id === "base64-encoder-decoder")).toBe(
+      false,
+    );
+    expect(index.some((item) => item.id === "html-formatter")).toBe(true);
     expect(index.some((item) => item.id === "category-image")).toBe(false);
     expect(index.some((item) => item.type === "article")).toBe(false);
   });

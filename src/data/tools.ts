@@ -73,7 +73,7 @@ const entries: Array<
     "developer",
     "Clean and organize HTML markup.",
     ["html", "markup", "beautify"],
-    false,
+    true,
     "Formatter",
   ],
   [
@@ -224,6 +224,7 @@ export const tools: Tool[] = entries.map(
     availability: "catalog",
     implementationStatus:
       slug === "json-formatter" ||
+      slug === "html-formatter" ||
       slug === "word-counter" ||
       slug === "meta-tag-generator"
         ? "operational"

@@ -21,3 +21,7 @@ Unknown routes use the App Router `src/app/not-found.tsx` convention and return 
 # Global search
 
 The `/search` route performs all matching locally against centralized static data. URL parameters preserve query/filter/sort/page state for browser navigation. Unpublished articles and unfinished destinations are omitted, and the route remains noindex and outside the sitemap.
+
+# HTML Formatter audit
+
+The operational HTML Formatter uses browser-bundled HTML-aware libraries rather than regex processing. Minification is intentionally conservative and embedded CSS/JavaScript minification is unsupported; formatting those blocks is optional. Invalid HTML is not validated or repaired, and framework-specific templates require output review.

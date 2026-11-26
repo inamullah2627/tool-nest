@@ -4494,6 +4494,9 @@ nav.main > button[aria-current="page"] {
 .post .meta b {
   color: color-mix(in srgb, var(--c) 82%, #000);
 }
+.dark .tpg .cat {
+  color: color-mix(in srgb, var(--c) 45%, #fff);
+}
 .mini,
 kbd,
 .cb small {
@@ -5363,5 +5366,43 @@ kbd,
   }
   .search-cta .cta h2 {
     font-size: 28px;
+  }
+}
+/* HTML formatter workspace */
+.html-workspace .html-advanced {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--bd);
+  background: var(--card);
+}
+.html-workspace .output-editor .oc {
+  min-height: 100%;
+}
+.html-workspace .code-line .t-k {
+  color: #7c3aed;
+}
+.html-workspace .code-line .t-n {
+  color: #2563eb;
+}
+.html-workspace .code-line .t-s {
+  color: #059669;
+}
+.dark .html-workspace .code-line .t-k {
+  color: #c4b5fd;
+}
+.dark .html-workspace .code-line .t-n {
+  color: #93c5fd;
+}
+.dark .html-workspace .code-line .t-s {
+  color: #6ee7b7;
+}
+@media (max-width: 860px) {
+  .html-workspace .html-advanced {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
   }
 }

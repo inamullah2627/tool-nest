@@ -8,6 +8,8 @@ Category directories share one client feature template and typed configuration, 
 
 Individual utilities use the reusable `ToolPageLayout` under `/tools/[slug]`. Each tool keeps its workspace and pure processing logic isolated. JSON Formatter runs parsing and serialization in a dedicated browser Web Worker; no input is sent to a server or persisted locally.
 
+HTML Formatter uses `js-beautify` and the official browser ESM bundle from `html-minifier-terser` inside a dedicated Web Worker. Its conservative minifier preserves comments, quoted attributes, optional tags and embedded code; user HTML is displayed only as escaped React text and is never rendered.
+
 The blog uses typed static data from `src/data/articles.ts`, reusable components under `src/features/blog`, and pure listing/content helpers under `src/lib/blog`. Structured article blocks are rendered as React elements without parsing arbitrary HTML. Publication status controls indexing, sitemap inclusion and Article structured data.
 
 Global search uses a pure local index under `src/lib/search`, sourcing operational tools and active categories from the tool registry, published articles from article data, and public pages from `src/data/search-pages.ts`. Search state is URL-based and no query data is transmitted or persisted.

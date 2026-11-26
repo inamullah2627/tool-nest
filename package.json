@@ -18,6 +18,8 @@
     "qa:json": "node scripts/json-formatter-qa.mjs"
   },
   "dependencies": {
+    "html-minifier-terser": "^7.2.0",
+    "js-beautify": "^2.0.3",
     "lucide-react": "^1.80.0",
     "next": "16.4.6",
     "next-themes": "^0.4.6",
