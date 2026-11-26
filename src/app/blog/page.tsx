@@ -7,9 +7,9 @@ const hasPublishedArticles = articles.some(
 );
 
 export const metadata: Metadata = {
-  title: "Blog Preview",
+  title: "Blog",
   description:
-    "Preview upcoming ToolNest guides about browser-based tools, writing, development and SEO.",
+    "Read practical ToolNest guides about browser-based tools, writing, development, productivity, and SEO.",
   alternates: { canonical: "/blog" },
   robots: hasPublishedArticles
     ? { index: true, follow: true }

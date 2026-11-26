@@ -124,7 +124,7 @@ export function BlogPage() {
           <div className="wrap">
             <div className="sh">
               <h2>Latest Articles</h2>
-              <p>Unpublished sample articles shown for design preview.</p>
+              <p>Practical guides, tutorials, and tips from ToolNest.</p>
             </div>
             <div className="btabs">
               <div
@@ -211,7 +211,7 @@ export function BlogPage() {
             <div className="blog-tools-heading">
               <div className="sh">
                 <h2>Put Your Knowledge into Practice</h2>
-                <p>Explore operational tools related to these sample guides.</p>
+                <p>Explore operational tools related to these guides.</p>
               </div>
               <Link href="/tools" className="btn">
                 View All Tools

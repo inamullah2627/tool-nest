@@ -164,6 +164,8 @@ export function ArticleLayout({ article }: { article: Article }) {
                   cover={article.cover}
                   color={category.color}
                   label={category.name}
+                  imageSrc={article.featuredImage}
+                  imageAlt={article.featuredImageAlt}
                 />
               </div>
               <div className="mtoc">
@@ -198,8 +200,8 @@ export function ArticleLayout({ article }: { article: Article }) {
                     <b>{article.author}</b>
                     <p>
                       The ToolNest Editorial Team prepares practical guides
-                      about browser-based tools. This profile and article are
-                      demonstration content pending editorial review.
+                      about browser-based tools, development workflows, and
+                      everyday productivity.
                     </p>
                   </div>
                 </div>
@@ -459,14 +461,23 @@ function TableOfContents({
 function ContextualToolCta({ toolId }: { toolId: string }) {
   const tool = tools.find((item) => item.id === toolId);
   if (!tool) return null;
+  const isWordCounter = tool.id === "word-counter";
   return (
     <aside className="atc">
       <span className="cico">
-        <Icon name="braces" size={22} />
+        <Icon name={isWordCounter ? "type" : "braces"} size={22} />
       </span>
       <div>
-        <h4>Format Your JSON in Seconds</h4>
-        <p>Beautify, validate and minify JSON directly in your browser.</p>
+        <h4>
+          {isWordCounter
+            ? "Count Your Words Instantly"
+            : "Format Your JSON in Seconds"}
+        </h4>
+        <p>
+          {isWordCounter
+            ? "Check words, characters, sentences and reading time in your browser."
+            : "Beautify, validate and minify JSON directly in your browser."}
+        </p>
       </div>
       <Link href={`/tools/${tool.slug}`} className="btn pr">
         Try {tool.name}
@@ -480,7 +491,7 @@ function SidebarTool({ tool }: { tool: (typeof tools)[number] }) {
   return (
     <article className="tc article-sidebar-tool">
       <span className="cico">
-        <Icon name="braces" size={22} />
+        <Icon name={tool.id === "word-counter" ? "type" : "braces"} size={22} />
       </span>
       <span className="cat">{category.name}</span>
       <h3>{tool.name}</h3>

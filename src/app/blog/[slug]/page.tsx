@@ -36,6 +36,14 @@ export async function generateMetadata({
       modifiedTime: published ? article.updatedAt : undefined,
       authors: published ? [article.author] : undefined,
       tags: published ? article.tags : undefined,
+      images: article.featuredImage
+        ? [
+            {
+              url: `${siteConfig.url ?? "https://toolnest.example"}${article.featuredImage}`,
+              alt: article.featuredImageAlt ?? article.title,
+            },
+          ]
+        : undefined,
     },
   };
 }
@@ -59,6 +67,9 @@ export default async function ArticleRoute({
         dateModified: article.updatedAt ?? article.publishedAt,
         author: { "@type": "Organization", name: article.author },
         mainEntityOfPage: `${siteConfig.url ?? "https://toolnest.example"}/blog/${article.slug}`,
+        image: article.featuredImage
+          ? `${siteConfig.url ?? "https://toolnest.example"}${article.featuredImage}`
+          : undefined,
         timeRequired: `PT${getArticleReadingTime(article)}M`,
       }
     : null;

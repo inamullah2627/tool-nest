@@ -3488,11 +3488,12 @@ footer .tag {
   min-height: 320px;
   background: var(--sub);
 }
-.blog-page .facv svg {
+.blog-page .facv .bth {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
+  object-fit: cover;
 }
 .blog-page .fa .bd {
   padding: 40px;

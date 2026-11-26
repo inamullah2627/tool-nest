@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Icon } from "@/components/design/icon";
 import {
   articleCategories,
@@ -18,11 +19,15 @@ export function ArticleCard({ article }: { article: Article }) {
         cover={article.cover}
         color={category.color}
         label={category.name}
+        imageSrc={article.featuredImage}
+        imageAlt={article.featuredImageAlt}
       />
       <div className="bd">
         <div className="blog-card-labels">
           <span className="cat">{category.name}</span>
-          <span className="mini">Preview</span>
+          <span className="mini">
+            {article.status === "published" ? "Published" : "Preview"}
+          </span>
         </div>
         <h3>
           {article.content ? (
@@ -37,7 +42,11 @@ export function ArticleCard({ article }: { article: Article }) {
         <div className="bfoot">
           <ArticleMetadata article={article} />
           <span className="blog-coming">
-            {article.content ? "Read sample article" : "Article coming soon"}
+            {article.status === "published"
+              ? "Read article"
+              : article.content
+                ? "Read sample article"
+                : "Article coming soon"}
           </span>
         </div>
       </div>
@@ -57,13 +66,17 @@ export function FeaturedArticle({ article }: { article: Article }) {
           cover={article.cover}
           color={category.color}
           label={category.name}
+          imageSrc={article.featuredImage}
+          imageAlt={article.featuredImageAlt}
         />
       </div>
       <div className="bd">
         <div className="top">
           <span className="eyebrow">
             <Icon name="spark" size={14} />
-            Featured Preview
+            {article.status === "published"
+              ? "Featured Article"
+              : "Featured Preview"}
           </span>
           <span className="cat">{category.name}</span>
         </div>
@@ -79,12 +92,19 @@ export function FeaturedArticle({ article }: { article: Article }) {
           </span>
           <div>
             <b>{article.author}</b>
-            <small>Unpublished sample article</small>
+            <small>
+              {article.status === "published"
+                ? "Editorial team"
+                : "Unpublished sample article"}
+            </small>
           </div>
         </div>
         <ArticleMetadata article={article} />
         <Link className="btn pr" href={`/blog/${article.slug}`}>
-          Read Sample Article <Icon name="arrow" size={16} />
+          {article.status === "published"
+            ? "Read Article"
+            : "Read Sample Article"}{" "}
+          <Icon name="arrow" size={16} />
         </Link>
       </div>
     </article>
@@ -172,11 +192,28 @@ export function ArticleCoverArt({
   cover,
   color,
   label,
+  imageSrc,
+  imageAlt,
 }: {
   cover: ArticleCover;
   color: string;
   label: string;
+  imageSrc?: string;
+  imageAlt?: string;
 }) {
+  if (imageSrc) {
+    return (
+      <Image
+        className="bth"
+        src={imageSrc}
+        alt={imageAlt ?? `${label} article illustration`}
+        width={1600}
+        height={900}
+        sizes="(max-width: 760px) 100vw, 50vw"
+        priority
+      />
+    );
+  }
   const symbol: Record<ArticleCover, string> = {
     json: "{ }",
     minify: "{…}",

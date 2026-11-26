@@ -24,7 +24,7 @@ describe("structured article content", () => {
 
   it("calculates reading time from actual structured content", () => {
     const article = articles.find(
-      (item) => item.slug === "how-to-format-and-validate-json",
+      (item) => item.slug === "how-to-format-json-in-vscode",
     )!;
     expect(article.content?.length).toBeGreaterThan(20);
     expect(getArticleReadingTime(article)).toBeGreaterThanOrEqual(3);

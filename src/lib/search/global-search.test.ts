@@ -8,7 +8,9 @@ import {
 
 describe("global search", () => {
   it("matches case-insensitively and supports partial titles", () => {
-    expect(searchGlobalContent("JsOn")[0]?.id).toBe("json-formatter");
+    expect(
+      searchGlobalContent("JsOn").some((item) => item.id === "json-formatter"),
+    ).toBe(true);
     expect(
       searchGlobalContent("count").some((item) => item.id === "word-counter"),
     ).toBe(true);
@@ -38,7 +40,18 @@ describe("global search", () => {
     );
     expect(index.some((item) => item.id === "html-formatter")).toBe(true);
     expect(index.some((item) => item.id === "category-image")).toBe(false);
-    expect(index.some((item) => item.type === "article")).toBe(false);
+    expect(
+      index.some(
+        (item) =>
+          item.type === "article" && item.id === "article-json-formatting",
+      ),
+    ).toBe(true);
+    expect(
+      index.some(
+        (item) =>
+          item.type === "article" && item.id === "article-json-minification",
+      ),
+    ).toBe(false);
   });
 
   it("tokenizes repeated whitespace and creates safe highlight segments", () => {
