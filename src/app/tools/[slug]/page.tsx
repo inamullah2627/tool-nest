@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { tools } from "@/data/tools";
 import { JsonFormatterPage } from "@/features/json-formatter/json-formatter-page";
+import { MetaTagGeneratorPage } from "@/features/meta-tag-generator/meta-tag-generator-page";
 import { WordCounterPage } from "@/features/word-counter/word-counter-page";
 
 const implementedTools = tools.filter(
@@ -35,5 +36,6 @@ export default async function ToolRoute({
   const { slug } = await params;
   if (slug === "json-formatter") return <JsonFormatterPage />;
   if (slug === "word-counter") return <WordCounterPage />;
+  if (slug === "meta-tag-generator") return <MetaTagGeneratorPage />;
   notFound();
 }

@@ -223,7 +223,9 @@ export const tools: Tool[] = entries.map(
     group,
     availability: "catalog",
     implementationStatus:
-      slug === "json-formatter" || slug === "word-counter"
+      slug === "json-formatter" ||
+      slug === "word-counter" ||
+      slug === "meta-tag-generator"
         ? "operational"
         : "planned",
     featured,

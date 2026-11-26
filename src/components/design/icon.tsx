@@ -60,6 +60,9 @@ const aliases = {
   trash: Icons.Trash2,
   alert: Icons.CircleAlert,
   fullscreen: Icons.Maximize,
+  monitor: Icons.Monitor,
+  phone: Icons.Smartphone,
+  rotate: Icons.RotateCcw,
 } as const;
 
 export type IconName = keyof typeof aliases;
