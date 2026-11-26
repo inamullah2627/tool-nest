@@ -29,3 +29,7 @@ The operational HTML Formatter uses browser-bundled HTML-aware libraries rather 
 # Case Converter audit
 
 Case Converter uses twelve native TypeScript conversion modes and no new dependency. Title Case follows a documented English minor-word convention; proper nouns and locale-specific casing still require review. Base64 and URL encoder/decoder tools remain planned.
+
+# CSS Minifier audit
+
+CSS Minifier uses CSSO 5 with restructuring disabled and the existing js-beautify CSS processor. It preserves exclamation, `@license` and `@preserve` comments by default, but removes regular comments and can perform safe value normalization. Native CSS nesting and range-style media queries are explicitly rejected because CSSO 5 cannot preserve them safely. CSS is never applied to the interface or used to fetch resources.

@@ -22,6 +22,8 @@ JSON Formatter is operational at `/tools/json-formatter`, including formatting, 
 
 HTML Formatter is operational at `/tools/html-formatter`, including HTML-aware beautification, conservative minification, indentation and line-wrap controls, optional embedded CSS/JavaScript formatting, syntax-highlighted text output, HTML file actions, fullscreen mode, favorites and recent activity. Processing runs in a browser Web Worker and user markup is never rendered or persisted.
 
+CSS Minifier is operational at `/tools/css-minifier`, using CSSO without structural restructuring for conservative minification and js-beautify for formatting. It includes license-comment preferences, UTF-8 compression metrics, safe text-only syntax output, CSS file actions, fullscreen, favorites and recent activity. Native nesting and range-style media queries are rejected rather than processed unsafely.
+
 Word Counter is operational at `/tools/word-counter`, including live Unicode-aware text analysis, character and structure counts, keyword density, reading/speaking estimates, TXT file actions, fullscreen mode, favorites and recent activity. Text stays in browser memory and TXT input is limited to 1 MB.
 
 Case Converter is operational at `/tools/case-converter`, with seven standard modes and five developer identifier modes, instant derived output, Unicode-aware case handling and counts, TXT and clipboard actions, fullscreen mode, favorites and recent activity. Original text remains unchanged when switching modes and is not persisted.

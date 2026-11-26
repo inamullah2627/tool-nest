@@ -3182,6 +3182,82 @@ footer .tag {
   }
 }
 
+/* CSS Minifier workspace */
+.css-workspace {
+  --c: #2563eb;
+}
+.css-workspace .css-output {
+  padding-left: 20px;
+}
+.css-workspace .css-output code {
+  white-space: inherit;
+}
+.css-workspace .css-output.wrap {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.crs {
+  margin-top: 24px;
+  padding: 20px 24px;
+  border: 1px solid var(--bd);
+  border-radius: 16px;
+  background: var(--card);
+}
+.crh {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+.crh b {
+  color: var(--h);
+  font: 600 16px var(--hf);
+}
+.crh span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--m);
+  font: 600 13px var(--bf);
+}
+.crh span.ok {
+  color: var(--ok);
+}
+.compression-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+.compression-stats .sc > b {
+  font-size: 22px;
+}
+.cnote {
+  margin: 16px 0 0;
+  color: var(--m);
+  font-size: 14px;
+}
+.example-note {
+  max-width: 680px;
+  margin: 24px auto 0;
+  text-align: center;
+}
+@media (max-width: 860px) {
+  .compression-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 560px) {
+  .crs {
+    margin-inline: 16px;
+    padding: 16px;
+  }
+  .compression-stats {
+    gap: 10px;
+  }
+}
+
 /* Meta Tag Generator workspace */
 .mt {
   --c: #059669;

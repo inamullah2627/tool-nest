@@ -12,6 +12,8 @@ HTML Formatter uses `js-beautify` and the official browser ESM bundle from `html
 
 Case Converter keeps all twelve transformations in an isolated native TypeScript module. Its client workspace derives output from unchanged source text and the selected mode, while file and clipboard actions remain local to the browser.
 
+CSS Minifier runs CSSO with structural restructuring and unsafe media merging disabled inside a browser Web Worker. The existing js-beautify dependency provides CSS beautification. CSS is displayed as text and is never injected into the document.
+
 The blog uses typed static data from `src/data/articles.ts`, reusable components under `src/features/blog`, and pure listing/content helpers under `src/lib/blog`. Structured article blocks are rendered as React elements without parsing arbitrary HTML. Publication status controls indexing, sitemap inclusion and Article structured data.
 
 Global search uses a pure local index under `src/lib/search`, sourcing operational tools and active categories from the tool registry, published articles from article data, and public pages from `src/data/search-pages.ts`. Search state is URL-based and no query data is transmitted or persisted.

@@ -6,6 +6,7 @@ import { HtmlFormatterPage } from "@/features/html-formatter/html-formatter-page
 import { MetaTagGeneratorPage } from "@/features/meta-tag-generator/meta-tag-generator-page";
 import { WordCounterPage } from "@/features/word-counter/word-counter-page";
 import { CaseConverterPage } from "@/features/case-converter/case-converter-page";
+import { CssMinifierPage } from "@/features/css-minifier/css-minifier-page";
 
 const implementedTools = tools.filter(
   (tool) => tool.implementationStatus === "operational",
@@ -40,6 +41,7 @@ export default async function ToolRoute({
   if (slug === "html-formatter") return <HtmlFormatterPage />;
   if (slug === "word-counter") return <WordCounterPage />;
   if (slug === "case-converter") return <CaseConverterPage />;
+  if (slug === "css-minifier") return <CssMinifierPage />;
   if (slug === "meta-tag-generator") return <MetaTagGeneratorPage />;
   notFound();
 }

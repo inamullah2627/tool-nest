@@ -225,6 +225,7 @@ export const tools: Tool[] = entries.map(
     implementationStatus:
       slug === "json-formatter" ||
       slug === "html-formatter" ||
+      slug === "css-minifier" ||
       slug === "word-counter" ||
       slug === "case-converter" ||
       slug === "meta-tag-generator"
