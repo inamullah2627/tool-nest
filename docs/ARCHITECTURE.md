@@ -10,6 +10,8 @@ Individual utilities use the reusable `ToolPageLayout` under `/tools/[slug]`. Ea
 
 HTML Formatter uses `js-beautify` and the official browser ESM bundle from `html-minifier-terser` inside a dedicated Web Worker. Its conservative minifier preserves comments, quoted attributes, optional tags and embedded code; user HTML is displayed only as escaped React text and is never rendered.
 
+Case Converter keeps all twelve transformations in an isolated native TypeScript module. Its client workspace derives output from unchanged source text and the selected mode, while file and clipboard actions remain local to the browser.
+
 The blog uses typed static data from `src/data/articles.ts`, reusable components under `src/features/blog`, and pure listing/content helpers under `src/lib/blog`. Structured article blocks are rendered as React elements without parsing arbitrary HTML. Publication status controls indexing, sitemap inclusion and Article structured data.
 
 Global search uses a pure local index under `src/lib/search`, sourcing operational tools and active categories from the tool registry, published articles from article data, and public pages from `src/data/search-pages.ts`. Search state is URL-based and no query data is transmitted or persisted.

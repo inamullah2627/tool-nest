@@ -25,3 +25,7 @@ The `/search` route performs all matching locally against centralized static dat
 # HTML Formatter audit
 
 The operational HTML Formatter uses browser-bundled HTML-aware libraries rather than regex processing. Minification is intentionally conservative and embedded CSS/JavaScript minification is unsupported; formatting those blocks is optional. Invalid HTML is not validated or repaired, and framework-specific templates require output review.
+
+# Case Converter audit
+
+Case Converter uses twelve native TypeScript conversion modes and no new dependency. Title Case follows a documented English minor-word convention; proper nouns and locale-specific casing still require review. Base64 and URL encoder/decoder tools remain planned.

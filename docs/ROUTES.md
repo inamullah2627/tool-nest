@@ -4,7 +4,7 @@ Implemented: `/`, `/about`, `/contact`, `/privacy-policy`, `/terms-and-condition
 
 The App Router `not-found.tsx` convention provides the custom recovery experience for unknown general, tool, category and article URLs. Invalid destinations return a real HTTP 404 response and the hydrated recovery UI replaces the visible address with `/404`; no separate 200-status `/404` page is created or included in the sitemap.
 
-The reusable individual-tool route `/tools/[slug]` is established. `/tools/json-formatter`, `/tools/html-formatter`, `/tools/word-counter` and `/tools/meta-tag-generator` are operational tool pages.
+The reusable individual-tool route `/tools/[slug]` is established. `/tools/json-formatter`, `/tools/html-formatter`, `/tools/word-counter`, `/tools/case-converter` and `/tools/meta-tag-generator` are operational tool pages.
 
 Active indexed category routes: `/tools/category/developer`, `/tools/category/text`, and `/tools/category/seo`.
 

@@ -118,7 +118,7 @@ const entries: Array<
     "text",
     "Convert text between different letter cases.",
     ["uppercase", "lowercase", "title case"],
-    false,
+    true,
     "Text Formatting",
   ],
   [
@@ -226,6 +226,7 @@ export const tools: Tool[] = entries.map(
       slug === "json-formatter" ||
       slug === "html-formatter" ||
       slug === "word-counter" ||
+      slug === "case-converter" ||
       slug === "meta-tag-generator"
         ? "operational"
         : "planned",

@@ -24,6 +24,8 @@ HTML Formatter is operational at `/tools/html-formatter`, including HTML-aware b
 
 Word Counter is operational at `/tools/word-counter`, including live Unicode-aware text analysis, character and structure counts, keyword density, reading/speaking estimates, TXT file actions, fullscreen mode, favorites and recent activity. Text stays in browser memory and TXT input is limited to 1 MB.
 
+Case Converter is operational at `/tools/case-converter`, with seven standard modes and five developer identifier modes, instant derived output, Unicode-aware case handling and counts, TXT and clipboard actions, fullscreen mode, favorites and recent activity. Original text remains unchanged when switching modes and is not persisted.
+
 Meta Tag Generator is operational at `/tools/meta-tag-generator`, including escaped HTML generation, local HTTP(S) URL validation, advanced robots/author/charset/viewport controls, illustrative desktop/mobile previews, SEO guidance, code export, fullscreen mode, favorites and recent activity. Entered metadata is not persisted and no external site or SEO API is contacted. Other catalog tools remain unavailable.
 
 The Blog listing is implemented at `/blog` with typed local sample data, featured content, search, categories, sorting, pagination, empty states and related operational tools. A reusable detail layout and the demonstration article `/blog/how-to-format-and-validate-json` support structured content, automatic contents navigation, reading progress, code copy, sharing and related content. All articles remain drafts, so the listing and sample detail are `noindex, nofollow` and excluded from the sitemap.
