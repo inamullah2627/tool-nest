@@ -78,6 +78,8 @@ const aliases = {
   copyright: Icons.Copyright,
   clipboardCheck: Icons.ClipboardCheck,
   external: Icons.ExternalLink,
+  arrowLeft: Icons.ArrowLeft,
+  help: Icons.CircleHelp,
 } as const;
 
 export type IconName = keyof typeof aliases;

@@ -1,13 +1,12 @@
-import Link from "next/link";
+import type { Metadata } from "next";
+import { NotFoundPage } from "@/features/not-found/not-found-page";
+
+export const metadata: Metadata = {
+  title: "Page Not Found",
+  description: "The requested ToolNest page could not be found.",
+  robots: { index: false, follow: false },
+};
+
 export default function NotFound() {
-  return (
-    <section className="empty-page container">
-      <span className="eyebrow">404</span>
-      <h1>That page isn’t in the nest</h1>
-      <p>The destination may be planned for a future ToolNest release.</p>
-      <Link href="/tools" className="button primary">
-        Explore all tools
-      </Link>
-    </section>
-  );
+  return <NotFoundPage />;
 }

@@ -13,3 +13,7 @@ The Privacy Policy is an implementation-audited working draft, not finalized leg
 The Terms & Conditions page is also an explicitly non-indexed working draft. Its content does not identify an operator, company, jurisdiction or governing law and does not claim that proposed warranty or liability language is enforceable.
 
 The Disclaimer is a third non-indexed legal draft. Its tool-specific statements are tied to currently operational processors and registry availability rather than treating catalog visibility as functionality. All three legal drafts link to one another.
+
+# 404 behavior
+
+Unknown routes use the App Router `src/app/not-found.tsx` convention and return HTTP 404. After hydration the recovery UI replaces the visible invalid address with `/404`, while retaining the original 404 response rather than creating a standalone 200-status route. The page reuses the shared shell, registry, directory query parameter and favorites provider and remains outside the sitemap.
