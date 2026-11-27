@@ -775,6 +775,17 @@ a.bc:hover .go svg,
 .rw:hover {
   border-color: var(--c);
 }
+.rw:not(.rw-unavailable):hover {
+  transform: translateY(-2px);
+  box-shadow: var(--sh);
+}
+.rw:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--c) 38%, transparent);
+  outline-offset: 2px;
+}
+.rw-unavailable {
+  cursor: default;
+}
 .rw .n {
   font: 600 15px var(--hf);
   color: var(--h);
@@ -782,6 +793,13 @@ a.bc:hover .go svg,
 .rw > svg:last-child {
   margin-left: auto;
   color: var(--m);
+}
+.rw-status {
+  margin-left: auto;
+  color: var(--m);
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
 }
 .ad {
   max-width: 728px;

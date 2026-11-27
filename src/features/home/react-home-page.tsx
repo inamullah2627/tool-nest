@@ -415,12 +415,8 @@ export function ReactHomePage() {
             <div className="rg">
               {shown.map((tool) => {
                 const category = categoryMap[tool.category];
-                return (
-                  <div
-                    className="rw"
-                    style={{ "--c": category.color } as React.CSSProperties}
-                    key={tool.id}
-                  >
+                const content = (
+                  <>
                     <span className="cico">
                       <Icon name={categoryIcons[tool.category]} />
                     </span>
@@ -428,7 +424,32 @@ export function ReactHomePage() {
                       <div className="n">{tool.name}</div>
                       <span className="cat">{category.shortName}</span>
                     </div>
-                    <Icon name="arrow" size={16} />
+                    {tool.implementationStatus === "operational" ? (
+                      <Icon name="arrow" size={16} />
+                    ) : (
+                      <span className="rw-status">Coming Soon</span>
+                    )}
+                  </>
+                );
+
+                return tool.implementationStatus === "operational" ? (
+                  <Link
+                    className="rw"
+                    href={`/tools/${tool.slug}`}
+                    style={{ "--c": category.color } as React.CSSProperties}
+                    key={tool.id}
+                    aria-label={`Open ${tool.name}`}
+                  >
+                    {content}
+                  </Link>
+                ) : (
+                  <div
+                    className="rw rw-unavailable"
+                    style={{ "--c": category.color } as React.CSSProperties}
+                    key={tool.id}
+                    aria-label={`${tool.name} is coming soon`}
+                  >
+                    {content}
                   </div>
                 );
               })}
