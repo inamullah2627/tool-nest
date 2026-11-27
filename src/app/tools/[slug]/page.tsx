@@ -7,6 +7,7 @@ import { MetaTagGeneratorPage } from "@/features/meta-tag-generator/meta-tag-gen
 import { WordCounterPage } from "@/features/word-counter/word-counter-page";
 import { CaseConverterPage } from "@/features/case-converter/case-converter-page";
 import { CssMinifierPage } from "@/features/css-minifier/css-minifier-page";
+import { DuplicateLinesPage } from "@/features/duplicate-lines/duplicate-lines-page";
 
 const implementedTools = tools.filter(
   (tool) => tool.implementationStatus === "operational",
@@ -42,6 +43,7 @@ export default async function ToolRoute({
   if (slug === "word-counter") return <WordCounterPage />;
   if (slug === "case-converter") return <CaseConverterPage />;
   if (slug === "css-minifier") return <CssMinifierPage />;
+  if (slug === "remove-duplicate-lines") return <DuplicateLinesPage />;
   if (slug === "meta-tag-generator") return <MetaTagGeneratorPage />;
   notFound();
 }

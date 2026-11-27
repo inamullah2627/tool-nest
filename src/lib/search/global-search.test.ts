@@ -41,6 +41,9 @@ describe("global search", () => {
     expect(index.some((item) => item.id === "html-formatter")).toBe(true);
     expect(index.some((item) => item.id === "case-converter")).toBe(true);
     expect(index.some((item) => item.id === "css-minifier")).toBe(true);
+    expect(index.some((item) => item.id === "remove-duplicate-lines")).toBe(
+      true,
+    );
     expect(index.some((item) => item.id === "category-image")).toBe(false);
     expect(
       index.some(

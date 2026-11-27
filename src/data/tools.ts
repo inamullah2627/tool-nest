@@ -127,7 +127,7 @@ const entries: Array<
     "text",
     "Remove repeated lines from text.",
     ["duplicate", "lines", "clean"],
-    false,
+    true,
     "Text Cleaning",
   ],
   [
@@ -228,6 +228,7 @@ export const tools: Tool[] = entries.map(
       slug === "css-minifier" ||
       slug === "word-counter" ||
       slug === "case-converter" ||
+      slug === "remove-duplicate-lines" ||
       slug === "meta-tag-generator"
         ? "operational"
         : "planned",

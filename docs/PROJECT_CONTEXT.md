@@ -33,3 +33,7 @@ Case Converter uses twelve native TypeScript conversion modes and no new depende
 # CSS Minifier audit
 
 CSS Minifier uses CSSO 5 with restructuring disabled and the existing js-beautify CSS processor. It preserves exclamation, `@license` and `@preserve` comments by default, but removes regular comments and can perform safe value normalization. Native CSS nesting and range-style media queries are explicitly rejected because CSSO 5 cannot preserve them safely. CSS is never applied to the interface or used to fetch resources.
+
+# Remove Duplicate Lines audit
+
+Remove Duplicate Lines uses native Map and Set processing with no dependency. It treats a single terminal newline as a terminator, normalizes CRLF output to LF, preserves retained source content, and reports duplicate occurrences separately from removed empty lines. It is a whole-line processor rather than a CSV parser.

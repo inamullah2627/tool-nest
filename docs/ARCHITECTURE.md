@@ -14,6 +14,8 @@ Case Converter keeps all twelve transformations in an isolated native TypeScript
 
 CSS Minifier runs CSSO with structural restructuring and unsafe media merging disabled inside a browser Web Worker. The existing js-beautify dependency provides CSS beautification. CSS is displayed as text and is never injected into the document.
 
+Remove Duplicate Lines uses an isolated native TypeScript processor built around Map grouping and Set identity tracking. Matching normalization is separate from retained line content, and the client workspace clears derived output whenever source text or options change.
+
 The blog uses typed static data from `src/data/articles.ts`, reusable components under `src/features/blog`, and pure listing/content helpers under `src/lib/blog`. Structured article blocks are rendered as React elements without parsing arbitrary HTML. Publication status controls indexing, sitemap inclusion and Article structured data.
 
 Global search uses a pure local index under `src/lib/search`, sourcing operational tools and active categories from the tool registry, published articles from article data, and public pages from `src/data/search-pages.ts`. Search state is URL-based and no query data is transmitted or persisted.
