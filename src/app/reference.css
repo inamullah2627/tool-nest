@@ -1154,6 +1154,438 @@ a.bc:hover .go svg,
     white-space: nowrap;
   }
 }
+
+/* Open Graph Generator */
+.og-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 55fr) minmax(0, 45fr);
+}
+.og-form-column,
+.og-preview-column {
+  min-width: 0;
+}
+.og-preview-column {
+  border-left: 1px solid var(--bd);
+}
+.og-section {
+  padding: 20px 20px 8px;
+  border-bottom: 1px solid var(--bd);
+}
+.og-section:last-child {
+  border-bottom: 0;
+}
+.og-section > h2,
+.og-collapse h2 {
+  margin: 0 0 14px;
+  font-size: 16px;
+}
+.og-field {
+  display: grid;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+.og-field > span {
+  color: var(--h);
+  font-size: 14px;
+  font-weight: 600;
+}
+.og-input {
+  width: 100%;
+  min-width: 0;
+  color: var(--h);
+  background: var(--bg);
+  border: 1px solid var(--bd);
+  border-radius: 10px;
+  padding: 11px 13px;
+  font: 400 14px var(--bf);
+  transition: 0.2s;
+}
+.og-input:hover {
+  border-color: color-mix(in srgb, var(--c) 40%, var(--bd));
+}
+.og-input:focus {
+  outline: 0;
+  border-color: var(--c);
+  background: var(--card);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--c) 18%, transparent);
+}
+.og-input[aria-invalid="true"] {
+  border-color: var(--er);
+}
+.og-field textarea {
+  min-height: 100px;
+  resize: vertical;
+  line-height: 1.55;
+}
+.og-field small {
+  color: var(--m);
+  font-size: 12px;
+  line-height: 1.45;
+}
+.og-field .og-counter {
+  justify-self: end;
+  font: 500 12px var(--mf);
+}
+.og-field > strong {
+  color: var(--er);
+  font-size: 12px;
+}
+.og-field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+.og-drop {
+  display: grid;
+  justify-items: center;
+  gap: 4px;
+  padding: 20px;
+  border: 1.5px dashed var(--bd);
+  border-radius: 12px;
+  color: var(--m);
+  background: var(--bg);
+  text-align: center;
+  font-size: 13px;
+}
+.og-drop:hover {
+  border-color: var(--c);
+  background: color-mix(in srgb, var(--c) 8%, transparent);
+}
+.og-drop b {
+  color: var(--h);
+  font-size: 14px;
+}
+.og-local {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  gap: 12px;
+  align-items: center;
+  margin-top: 8px;
+  padding: 10px;
+  border: 1px solid var(--bd);
+  border-radius: 10px;
+  background: var(--sub);
+}
+.og-local img {
+  width: 96px;
+  height: 64px;
+  object-fit: cover;
+  border-radius: 7px;
+}
+.og-local > div {
+  min-width: 0;
+  display: grid;
+  gap: 4px;
+}
+.og-local b {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.og-local span {
+  color: var(--b);
+  font-size: 12px;
+}
+.og-local div div {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.og-local .btn {
+  padding: 5px 9px;
+  font-size: 11px;
+}
+.og-collapse {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
+}
+.og-collapse h2 {
+  margin: 0;
+}
+.og-collapse svg {
+  color: var(--m);
+  transition: transform 0.2s;
+}
+.og-collapse[aria-expanded="true"] svg {
+  transform: rotate(180deg);
+}
+.og-collapse-body {
+  margin-top: 16px;
+}
+.og-collapse-body h3 {
+  margin: 20px 0 12px;
+  color: var(--h);
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
+.og-switch {
+  margin-bottom: 16px;
+}
+.og-tabs {
+  display: flex;
+  max-width: 100%;
+  overflow-x: auto;
+  margin: 0 0 14px;
+}
+.og-tabs button {
+  flex: none;
+  width: auto;
+  min-height: 34px;
+  padding-inline: 12px;
+  white-space: nowrap;
+}
+.og-social-card {
+  max-width: 520px;
+  overflow: hidden;
+  border: 1px solid var(--bd);
+  border-radius: 12px;
+  background: var(--bg);
+}
+.og-preview-image {
+  aspect-ratio: 1.91 / 1;
+  overflow: hidden;
+  background: var(--el);
+}
+.og-preview-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+.og-placeholder {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  color: var(--c);
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--c) 18%, var(--sub)),
+    var(--sub)
+  );
+}
+.og-preview-copy {
+  display: grid;
+  gap: 3px;
+  padding: 11px 14px;
+  min-width: 0;
+}
+.og-preview-copy span {
+  overflow: hidden;
+  color: var(--b);
+  font-size: 11px;
+  font-weight: 600;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.og-preview-copy b {
+  color: var(--h);
+  font-size: 15px;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+.og-preview-copy p {
+  margin: 0;
+  color: var(--b);
+  font-size: 13px;
+  line-height: 1.4;
+}
+.og-social-card.facebook .og-preview-copy {
+  border-top: 1px solid var(--bd);
+  background: var(--el);
+}
+.og-social-card.linkedin .og-preview-copy {
+  background: var(--card);
+}
+.og-social-card.x {
+  border-radius: 16px;
+}
+.og-social-card.x.summary,
+.og-social-card.whatsapp {
+  display: grid;
+  grid-template-columns: 110px minmax(0, 1fr);
+}
+.og-social-card.x.summary .og-preview-image,
+.og-social-card.whatsapp .og-preview-image {
+  aspect-ratio: 1 / 1;
+}
+.og-social-card.x.summary .og-preview-copy,
+.og-social-card.whatsapp .og-preview-copy {
+  align-content: center;
+}
+.og-social-card.whatsapp {
+  background: var(--sub);
+}
+.og-platform-note {
+  color: var(--m);
+  font-size: 12px;
+}
+.og-output-section {
+  padding: 20px;
+  border-bottom: 1px solid var(--bd);
+  background: var(--card);
+}
+.og-output-section > .ph2 {
+  padding: 0 0 10px;
+  border: 0;
+}
+.og-code {
+  width: 100%;
+  height: 260px;
+  resize: vertical;
+  color: var(--h);
+  background: var(--sub);
+  border: 1px solid var(--bd);
+  border-radius: 12px;
+  padding: 14px;
+  font: 500 12px/1.7 var(--mf);
+  white-space: pre;
+}
+.og-code:focus {
+  outline: 2px solid color-mix(in srgb, var(--c) 45%, transparent);
+  outline-offset: 2px;
+}
+.og-fullscreen {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  overflow: auto;
+  padding: 20px;
+}
+.og-fullscreen .og-code {
+  height: calc(100vh - 150px);
+}
+.og-checklist {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.og-checklist li {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  color: var(--b);
+  font-size: 13px;
+}
+.og-checklist svg {
+  flex: none;
+  margin-top: 2px;
+}
+.og-checklist .ok svg {
+  color: var(--ok);
+}
+.og-checklist .warn svg {
+  color: #ea580c;
+}
+.og-checklist .info svg {
+  color: var(--m);
+}
+.og-checklist em {
+  margin-left: 4px;
+  color: var(--m);
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.og-privacy {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-top: 14px;
+  padding: 14px 16px;
+  border: 1px solid var(--bd);
+  border-radius: 12px;
+  color: var(--h);
+  background: var(--sub);
+  font-size: 13px;
+}
+.og-privacy svg {
+  flex: none;
+  color: var(--c);
+}
+.wsp .alert.og-alert {
+  color: var(--h);
+  background: var(--sub);
+  border-bottom-color: var(--bd);
+}
+.og-code-examples {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.og-code-examples article {
+  overflow: hidden;
+  border: 1px solid var(--bd);
+  border-radius: 14px;
+  background: var(--card);
+}
+.og-code-examples header {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--bd);
+  background: var(--el);
+}
+.og-code-examples header span {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--bd);
+}
+.og-code-examples header b {
+  margin-left: 5px;
+  color: var(--b);
+  font: 600 11px var(--mf);
+}
+.og-code-examples pre {
+  margin: 0;
+  padding: 18px;
+  overflow: auto;
+  color: var(--h);
+  font: 500 12px/1.75 var(--mf);
+}
+@media (max-width: 860px) {
+  .og-layout {
+    grid-template-columns: 1fr;
+  }
+  .og-preview-column {
+    border-top: 1px solid var(--bd);
+    border-left: 0;
+  }
+  .og-code-examples {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 560px) {
+  .og-field-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .og-section,
+  .og-output-section {
+    padding-inline: 14px;
+  }
+  .og-social-card.x.summary,
+  .og-social-card.whatsapp {
+    grid-template-columns: 84px minmax(0, 1fr);
+  }
+  .og-local {
+    grid-template-columns: 72px 1fr;
+  }
+  .og-local img {
+    width: 72px;
+    height: 56px;
+  }
+}
 .ad {
   max-width: 728px;
   margin: 0 auto;

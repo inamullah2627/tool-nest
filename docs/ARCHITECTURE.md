@@ -18,6 +18,8 @@ Remove Duplicate Lines uses an isolated native TypeScript processor built around
 
 URL Slug Generator uses one isolated Unicode-aware TypeScript transformation pipeline for single and bulk modes. HTTP(S) URL validation and encoded full-URL construction are pure local helpers; entered addresses are never fetched.
 
+Open Graph Generator keeps validation, conditional property selection, HTML escaping and Open Graph/Twitter Card generation in an isolated TypeScript module. Social previews use React text rendering. Local image object URLs are preview-only and revoked by the client workspace; remote URLs are never fetched.
+
 The blog uses typed static data from `src/data/articles.ts`, reusable components under `src/features/blog`, and pure listing/content helpers under `src/lib/blog`. Structured article blocks are rendered as React elements without parsing arbitrary HTML. Publication status controls indexing, sitemap inclusion and Article structured data.
 
 Global search uses a pure local index under `src/lib/search`, sourcing operational tools and active categories from the tool registry, published articles from article data, and public pages from `src/data/search-pages.ts`. Search state is URL-based and no query data is transmitted or persisted.

@@ -34,6 +34,8 @@ Meta Tag Generator is operational at `/tools/meta-tag-generator`, including esca
 
 URL Slug Generator is operational at `/tools/url-slug-generator`, including instant single and bulk generation, Unicode-aware normalization, three separators, stop-word and duplicate-word controls, optional complete-word limits, local HTTP(S) validation, encoded complete-URL previews, duplicate/empty bulk diagnostics, TXT export, favorites and recent activity. Text and URLs remain in browser memory and entered websites are never fetched. Other catalog tools remain unavailable.
 
+Open Graph Generator is operational at `/tools/open-graph-generator`, including validated Open Graph and Twitter Card output, website/article/profile properties, image metadata, locale and date controls, illustrative Facebook/LinkedIn/X/WhatsApp previews, local preview image dimension detection, output tabs, code export, fullscreen, favorites and recent activity. Local image object URLs are never emitted as metadata, and website or remote image URLs are not fetched. Other catalog tools remain unavailable.
+
 The Blog listing is implemented at `/blog` with typed local sample data, featured content, search, categories, sorting, pagination, empty states and related operational tools. A reusable detail layout and the demonstration article `/blog/how-to-format-and-validate-json` support structured content, automatic contents navigation, reading progress, code copy, sharing and related content. All articles remain drafts, so the listing and sample detail are `noindex, nofollow` and excluded from the sitemap.
 
 Pending by scope: remaining tool processors, real reviewed articles, content/legal routes, advertisements, robots policy, and deployment.

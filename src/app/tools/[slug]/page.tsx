@@ -9,6 +9,7 @@ import { CaseConverterPage } from "@/features/case-converter/case-converter-page
 import { CssMinifierPage } from "@/features/css-minifier/css-minifier-page";
 import { DuplicateLinesPage } from "@/features/duplicate-lines/duplicate-lines-page";
 import { UrlSlugGeneratorPage } from "@/features/url-slug-generator/url-slug-generator-page";
+import { OpenGraphGeneratorPage } from "@/features/open-graph-generator/open-graph-generator-page";
 
 const implementedTools = tools.filter(
   (tool) => tool.implementationStatus === "operational",
@@ -47,5 +48,6 @@ export default async function ToolRoute({
   if (slug === "remove-duplicate-lines") return <DuplicateLinesPage />;
   if (slug === "meta-tag-generator") return <MetaTagGeneratorPage />;
   if (slug === "url-slug-generator") return <UrlSlugGeneratorPage />;
+  if (slug === "open-graph-generator") return <OpenGraphGeneratorPage />;
   notFound();
 }

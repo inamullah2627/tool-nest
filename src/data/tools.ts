@@ -230,7 +230,8 @@ export const tools: Tool[] = entries.map(
       slug === "case-converter" ||
       slug === "remove-duplicate-lines" ||
       slug === "meta-tag-generator" ||
-      slug === "url-slug-generator"
+      slug === "url-slug-generator" ||
+      slug === "open-graph-generator"
         ? "operational"
         : "planned",
     featured,

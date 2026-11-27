@@ -2,7 +2,7 @@
 
 ToolNest is a free, SEO-focused collection of browser-based utilities for developers, writers, SEO professionals, students, and general users. The business model anticipates organic traffic and optional advertising, without mandatory accounts or subscriptions.
 
-The supplied interactive HTML artifact establishes the visual reference. Catalog visibility is separate from functional readiness: JSON Formatter, Word Counter and Meta Tag Generator are operational, while the remaining catalog entries are planned and unavailable.
+The supplied interactive HTML artifacts establish the visual reference. Catalog visibility is separate from functional readiness; `src/data/tools.ts` is the current source of truth for operational and planned tools.
 
 The Blog listing currently demonstrates the future editorial structure with local draft content. It is deliberately excluded from indexing until real articles are reviewed and published.
 
@@ -41,3 +41,7 @@ Remove Duplicate Lines uses native Map and Set processing with no dependency. It
 # URL Slug Generator audit
 
 URL Slug Generator uses native Unicode property escapes and adds no dependency. Accent normalization folds Latin diacritics and selected Latin letters, but does not transliterate other scripts. Bulk mode preserves line order and blank results. Full URLs accept only HTTP(S), remove query/fragment data from the preview base, and percent-encode the generated path without making a request.
+
+# Open Graph Generator audit
+
+Open Graph Generator performs validation and escaped HTML generation locally with no dependency or network request. Local JPG, PNG and WebP files up to 10 MB are decoded by the browser only to preview content and detect dimensions; temporary object URLs are revoked and excluded from metadata. Platform cards are illustrative and do not reproduce proprietary rendering or cache behavior exactly.
