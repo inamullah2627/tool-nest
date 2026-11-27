@@ -229,7 +229,8 @@ export const tools: Tool[] = entries.map(
       slug === "word-counter" ||
       slug === "case-converter" ||
       slug === "remove-duplicate-lines" ||
-      slug === "meta-tag-generator"
+      slug === "meta-tag-generator" ||
+      slug === "url-slug-generator"
         ? "operational"
         : "planned",
     featured,

@@ -37,3 +37,7 @@ CSS Minifier uses CSSO 5 with restructuring disabled and the existing js-beautif
 # Remove Duplicate Lines audit
 
 Remove Duplicate Lines uses native Map and Set processing with no dependency. It treats a single terminal newline as a terminator, normalizes CRLF output to LF, preserves retained source content, and reports duplicate occurrences separately from removed empty lines. It is a whole-line processor rather than a CSV parser.
+
+# URL Slug Generator audit
+
+URL Slug Generator uses native Unicode property escapes and adds no dependency. Accent normalization folds Latin diacritics and selected Latin letters, but does not transliterate other scripts. Bulk mode preserves line order and blank results. Full URLs accept only HTTP(S), remove query/fragment data from the preview base, and percent-encode the generated path without making a request.
