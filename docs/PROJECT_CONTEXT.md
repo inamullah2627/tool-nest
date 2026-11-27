@@ -45,3 +45,7 @@ URL Slug Generator uses native Unicode property escapes and adds no dependency. 
 # Open Graph Generator audit
 
 Open Graph Generator performs validation and escaped HTML generation locally with no dependency or network request. Local JPG, PNG and WebP files up to 10 MB are decoded by the browser only to preview content and detect dimensions; temporary object URLs are revoked and excluded from metadata. Platform cards are illustrative and do not reproduce proprietary rendering or cache behavior exactly.
+
+# Text Cleaner audit
+
+Text Cleaner uses native Unicode property escapes and browser-inert HTML containers with no new dependency. Its URL matcher targets explicit HTTP(S) and `www.` addresses, while its email matcher covers common domain-based forms rather than every RFC-valid edge case. HTML block boundaries become line or paragraph separation; scripts, styles and embedded-resource blocks are discarded without execution or network loading.

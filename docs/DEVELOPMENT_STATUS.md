@@ -36,6 +36,8 @@ URL Slug Generator is operational at `/tools/url-slug-generator`, including inst
 
 Open Graph Generator is operational at `/tools/open-graph-generator`, including validated Open Graph and Twitter Card output, website/article/profile properties, image metadata, locale and date controls, illustrative Facebook/LinkedIn/X/WhatsApp previews, local preview image dimension detection, output tabs, code export, fullscreen, favorites and recent activity. Local image object URLs are never emitted as metadata, and website or remote image URLs are not fetched. Other catalog tools remain unavailable.
 
+Text Cleaner is operational at `/tools/text-cleaner`, with 18 deterministic operations, four presets, Unicode-aware character classes, inert HTML/entity handling, URL/email removal, shared duplicate-line processing, sequential operation statistics, UTF-8 size metrics, TXT actions, fullscreen, favorites and recent activity. Text stays in browser memory and TXT input is limited to 1 MB. Other catalog tools remain unavailable.
+
 The Blog listing is implemented at `/blog` with typed local sample data, featured content, search, categories, sorting, pagination, empty states and related operational tools. A reusable detail layout and the demonstration article `/blog/how-to-format-and-validate-json` support structured content, automatic contents navigation, reading progress, code copy, sharing and related content. All articles remain drafts, so the listing and sample detail are `noindex, nofollow` and excluded from the sitemap.
 
 Pending by scope: remaining tool processors, real reviewed articles, content/legal routes, advertisements, robots policy, and deployment.

@@ -231,7 +231,8 @@ export const tools: Tool[] = entries.map(
       slug === "remove-duplicate-lines" ||
       slug === "meta-tag-generator" ||
       slug === "url-slug-generator" ||
-      slug === "open-graph-generator"
+      slug === "open-graph-generator" ||
+      slug === "text-cleaner"
         ? "operational"
         : "planned",
     featured,
