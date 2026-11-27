@@ -11,6 +11,7 @@ import { DuplicateLinesPage } from "@/features/duplicate-lines/duplicate-lines-p
 import { UrlSlugGeneratorPage } from "@/features/url-slug-generator/url-slug-generator-page";
 import { OpenGraphGeneratorPage } from "@/features/open-graph-generator/open-graph-generator-page";
 import { TextCleanerPage } from "@/features/text-cleaner/text-cleaner-page";
+import { DateDifferenceCalculatorPage } from "@/features/date-difference-calculator/date-difference-page";
 
 const implementedTools = tools.filter(
   (tool) => tool.implementationStatus === "operational",
@@ -51,5 +52,7 @@ export default async function ToolRoute({
   if (slug === "url-slug-generator") return <UrlSlugGeneratorPage />;
   if (slug === "open-graph-generator") return <OpenGraphGeneratorPage />;
   if (slug === "text-cleaner") return <TextCleanerPage />;
+  if (slug === "date-difference-calculator")
+    return <DateDifferenceCalculatorPage />;
   notFound();
 }

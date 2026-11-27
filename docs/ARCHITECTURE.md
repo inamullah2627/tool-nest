@@ -22,6 +22,8 @@ Open Graph Generator keeps validation, conditional property selection, HTML esca
 
 Text Cleaner uses a fixed isolated TypeScript pipeline for 18 composable operations and reuses the shared duplicate-line processor. Browser HTML cleaning uses inert template/textarea parsing after embedded-resource blocks are discarded; user markup is never mounted or fetched.
 
+Date Difference Calculator establishes reusable calculator workspace panels, statistics and summary components. Its isolated date-only engine maps proleptic Gregorian dates to integer day numbers, avoiding `Date` timezone and daylight-saving behavior. Business ranges use complete-week arithmetic rather than per-day iteration.
+
 The blog uses typed static data from `src/data/articles.ts`, reusable components under `src/features/blog`, and pure listing/content helpers under `src/lib/blog`. Structured article blocks are rendered as React elements without parsing arbitrary HTML. Publication status controls indexing, sitemap inclusion and Article structured data.
 
 Global search uses a pure local index under `src/lib/search`, sourcing operational tools and active categories from the tool registry, published articles from article data, and public pages from `src/data/search-pages.ts`. Search state is URL-based and no query data is transmitted or persisted.

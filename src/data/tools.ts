@@ -52,7 +52,7 @@ export const categories: Category[] = [
     description: "Simplify everyday calculations.",
     color: "#0284C7",
     iconKey: "Calculator",
-    active: false,
+    active: true,
   },
 ];
 const entries: Array<
@@ -211,34 +211,62 @@ const icons: Record<string, string> = {
   "robots-txt-generator": "Bot",
   "open-graph-generator": "Share2",
 };
-export const tools: Tool[] = entries.map(
-  ([slug, name, category, shortDescription, keywords, featured, group]) => ({
-    id: slug,
-    slug,
-    name,
-    shortDescription,
-    category,
-    iconKey: icons[slug],
-    keywords,
-    group,
+export const tools: Tool[] = [
+  ...entries.map<Tool>(
+    ([slug, name, category, shortDescription, keywords, featured, group]) => ({
+      id: slug,
+      slug,
+      name,
+      shortDescription,
+      category,
+      iconKey: icons[slug],
+      keywords,
+      group,
+      availability: "catalog",
+      implementationStatus:
+        slug === "json-formatter" ||
+        slug === "html-formatter" ||
+        slug === "css-minifier" ||
+        slug === "word-counter" ||
+        slug === "case-converter" ||
+        slug === "remove-duplicate-lines" ||
+        slug === "meta-tag-generator" ||
+        slug === "url-slug-generator" ||
+        slug === "open-graph-generator" ||
+        slug === "text-cleaner" ||
+        slug === "date-difference-calculator"
+          ? "operational"
+          : "planned",
+      featured,
+      seo: { title: `${name} — ToolNest`, description: shortDescription },
+    }),
+  ),
+  {
+    id: "date-difference-calculator",
+    slug: "date-difference-calculator",
+    name: "Date Difference Calculator",
+    shortDescription:
+      "Calculate date differences, date arithmetic and business days.",
+    category: "calculators",
+    iconKey: "Clock3",
+    keywords: [
+      "date difference",
+      "days between dates",
+      "business days",
+      "add dates",
+      "subtract dates",
+    ],
+    group: "Date & Time",
     availability: "catalog",
-    implementationStatus:
-      slug === "json-formatter" ||
-      slug === "html-formatter" ||
-      slug === "css-minifier" ||
-      slug === "word-counter" ||
-      slug === "case-converter" ||
-      slug === "remove-duplicate-lines" ||
-      slug === "meta-tag-generator" ||
-      slug === "url-slug-generator" ||
-      slug === "open-graph-generator" ||
-      slug === "text-cleaner"
-        ? "operational"
-        : "planned",
-    featured,
-    seo: { title: `${name} — ToolNest`, description: shortDescription },
-  }),
-);
+    implementationStatus: "operational",
+    featured: true,
+    seo: {
+      title: "Date Difference Calculator — ToolNest",
+      description:
+        "Calculate calendar differences, add or subtract dates, and count customizable business days locally in your browser.",
+    },
+  },
+];
 export const categoryMap = Object.fromEntries(
   categories.map((category) => [category.id, category]),
 ) as Record<CategoryId, Category>;
@@ -384,14 +412,6 @@ export const plannedCategoryTools: PlannedTool[] = [
     "Calculate discounts and final prices.",
     "Tags",
     "Financial Calculators",
-  ],
-  [
-    "date-difference-calculator",
-    "Date Difference Calculator",
-    "calculators",
-    "Calculate the duration between dates.",
-    "Clock3",
-    "Date & Time",
   ],
 ].map(([slug, name, category, shortDescription, iconKey, group]) => ({
   id: slug,

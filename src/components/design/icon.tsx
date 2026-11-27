@@ -48,6 +48,7 @@ const aliases = {
   maximize: Icons.Maximize2,
   crop: Icons.Crop,
   repeat: Icons.Repeat2,
+  swap: Icons.ArrowRightLeft,
   layers: Icons.Layers,
   scissors: Icons.Scissors,
   percent: Icons.Percent,

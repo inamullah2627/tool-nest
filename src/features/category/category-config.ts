@@ -347,22 +347,98 @@ export const categoryConfigs: Record<CategoryId, CategoryConfig> = {
     "PDF Tools Are on the Way.",
     plannedCta,
   ),
-  calculators: planned(
-    "calculators",
-    "EVERYDAY CALCULATION TOOLKIT",
-    "Free Online Calculators",
-    "Make everyday calculations easier with simple and convenient online calculators.",
-    [
+  calculators: {
+    slug: "calculators",
+    label: "EVERYDAY CALCULATION TOOLKIT",
+    heading: "Free Online Calculators",
+    lead: "Calculate date differences and explore practical browser-based utilities for everyday calculations.",
+    button: "Browse Calculators",
+    comingSoon: false,
+    groups: [
+      "Date & Time",
       "General Calculators",
       "Financial Calculators",
       "Health Calculators",
-      "Date & Time",
     ],
-    "calculator",
-    "Calculator FAQs",
-    "Calculators Are on the Way.",
-    plannedCta,
-  ),
+    exploreText:
+      "Use the available calculator or preview utilities planned for future releases.",
+    preview: "calculator",
+    featuresHeading: "Straightforward Browser-Based Calculations",
+    featuresText:
+      "Clear inputs, documented conventions and useful result breakdowns.",
+    features: [
+      [
+        "calendar",
+        "Calendar Calculations",
+        "Calculate date differences, date arithmetic and business days.",
+      ],
+      [
+        "shieldCheck",
+        "Browser-Based",
+        "Available calculations run locally without uploading your inputs.",
+      ],
+      [
+        "sliders",
+        "Documented Options",
+        "Adjust inclusion rules, working weeks and other relevant settings.",
+      ],
+      [
+        "globe",
+        "Free Access",
+        "Use available calculators without registration or subscriptions.",
+      ],
+    ],
+    stepsHeading: "Calculate in Three Simple Steps",
+    steps: [
+      [
+        "cursor",
+        "Choose a Calculator",
+        "Select an available calculator for your task.",
+      ],
+      [
+        "edit",
+        "Enter Your Values",
+        "Provide the dates or numbers requested by the calculator.",
+      ],
+      [
+        "check",
+        "Review the Result",
+        "Check the output, conventions and detailed breakdown.",
+      ],
+    ],
+    educationHeading: "Understanding Online Calculators",
+    education: [
+      [
+        "What Are Online Calculators?",
+        "Focused calculators help solve everyday numerical and calendar tasks directly in a browser.",
+      ],
+      [
+        "Calendar Calculations",
+        "Date calculations need real month lengths, leap-year rules and explicit boundary conventions.",
+      ],
+      [
+        "Understanding Results",
+        "Always review whether a result uses inclusive dates, calendar days, business days or estimates.",
+      ],
+      [
+        "Future Calculator Toolkit",
+        "Date Difference Calculator is available now. Other listed calculators remain planned and do not have processing interfaces.",
+      ],
+    ],
+    callout:
+      "Calculator results depend on the chosen conventions. For legal, financial, health or contractual decisions, verify the applicable rules with a qualified professional.",
+    faqHeading: "Calculator FAQs",
+    faqs: [
+      ...activeFaq("calculators"),
+      [
+        "Which calculator is available now?",
+        "Date Difference Calculator is currently available. Other calculator cards are marked Coming Soon.",
+      ],
+    ],
+    ctaHeading: "Calculate Dates with Confidence",
+    ctaText:
+      "Use the Date Difference Calculator for calendar durations, date arithmetic and customizable business-day counts.",
+  },
 };
 
 function planned(

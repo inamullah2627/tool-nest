@@ -49,3 +49,7 @@ Open Graph Generator performs validation and escaped HTML generation locally wit
 # Text Cleaner audit
 
 Text Cleaner uses native Unicode property escapes and browser-inert HTML containers with no new dependency. Its URL matcher targets explicit HTTP(S) and `www.` addresses, while its email matcher covers common domain-based forms rather than every RFC-valid edge case. HTML block boundaries become line or paragraph separation; scripts, styles and embedded-resource blocks are discarded without execution or network loading.
+
+# Date Difference Calculator audit
+
+Date calculations use a native integer proleptic-Gregorian engine with a supported input range of years 0001 through 9999 and no date dependency. Counts describe whole calendar dates rather than timezone-aware elapsed timestamps. The end date is excluded by default; reversed ranges return positive magnitudes with direction; years/months are applied before weeks/days; shorter target months clamp to their final day. Business-day holidays are manual, deduplicated and never fetched from an external service.
