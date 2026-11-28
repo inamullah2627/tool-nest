@@ -16,7 +16,7 @@ Draft Terms & Conditions are implemented at `/terms-and-conditions` using the sa
 
 The draft Disclaimer is implemented at `/disclaimer` with centralized structured content and verified disclosures for the operational JSON Formatter, Word Counter and Meta Tag Generator. Planned Image, PDF and Calculator categories are identified as unavailable. The page remains excluded from indexing and the sitemap; risk allocation, liability language, operator identity, effective date and final professional-advice wording require legal review.
 
-Developer, Text, SEO and Calculators category directories are active. Image and PDF remain reviewable Coming Soon pages with `noindex` metadata and are excluded from the sitemap. Date Difference Calculator is the only operational calculator; all other calculator entries remain planned.
+Developer, Text, SEO, Image and Calculators category directories are active. PDF remains a reviewable Coming Soon page with `noindex` metadata and is excluded from the sitemap. Image Compressor is the only operational image tool and Date Difference Calculator is the only operational calculator; the other entries in those categories remain planned.
 
 JSON Formatter is operational at `/tools/json-formatter`, including formatting, minification, validation, safe key sorting, syntax output, tree view, file and clipboard actions, fullscreen mode, favorites and recent activity.
 
@@ -39,6 +39,8 @@ Open Graph Generator is operational at `/tools/open-graph-generator`, including 
 Text Cleaner is operational at `/tools/text-cleaner`, with 18 deterministic operations, four presets, Unicode-aware character classes, inert HTML/entity handling, URL/email removal, shared duplicate-line processing, sequential operation statistics, UTF-8 size metrics, TXT actions, fullscreen, favorites and recent activity. Text stays in browser memory and TXT input is limited to 1 MB. Other catalog tools remain unavailable.
 
 Date Difference Calculator is operational at `/tools/date-difference-calculator`, with timezone-free Gregorian date difference, inclusive boundaries, reversed-range direction, calendar date addition/subtraction, custom business weeks, manual holiday exclusions, detailed statistics, copy actions, favorites and recent activity. Dates remain in browser memory. Other calculator tools remain unavailable.
+
+Image Compressor is operational at `/tools/image-compressor`, with local JPG, PNG and WebP decoding and encoding, batch validation, compression presets, best-effort JPG/WebP target sizing, lossless pixel PNG re-encoding, format conversion, optional resizing, actual comparison previews, cancellation, retry, individual downloads and client-side ZIP export. Images are limited to 20 MB each, 20 files per batch, 50 decoded megapixels and 16,384 pixels per side. Animated PNG/WebP and GIF are rejected rather than flattened. Canvas output removes metadata, browser decoders normalize supported orientation, and output bytes can vary by browser codec.
 
 The Blog listing is implemented at `/blog` with typed local sample data, featured content, search, categories, sorting, pagination, empty states and related operational tools. A reusable detail layout and the demonstration article `/blog/how-to-format-and-validate-json` support structured content, automatic contents navigation, reading progress, code copy, sharing and related content. All articles remain drafts, so the listing and sample detail are `noindex, nofollow` and excluded from the sitemap.
 

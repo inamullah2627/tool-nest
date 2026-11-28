@@ -12,6 +12,7 @@ import { UrlSlugGeneratorPage } from "@/features/url-slug-generator/url-slug-gen
 import { OpenGraphGeneratorPage } from "@/features/open-graph-generator/open-graph-generator-page";
 import { TextCleanerPage } from "@/features/text-cleaner/text-cleaner-page";
 import { DateDifferenceCalculatorPage } from "@/features/date-difference-calculator/date-difference-page";
+import { ImageCompressorPage } from "@/features/image-compressor/image-compressor-page";
 
 const implementedTools = tools.filter(
   (tool) => tool.implementationStatus === "operational",
@@ -54,5 +55,6 @@ export default async function ToolRoute({
   if (slug === "text-cleaner") return <TextCleanerPage />;
   if (slug === "date-difference-calculator")
     return <DateDifferenceCalculatorPage />;
+  if (slug === "image-compressor") return <ImageCompressorPage />;
   notFound();
 }

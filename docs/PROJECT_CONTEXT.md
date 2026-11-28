@@ -53,3 +53,7 @@ Text Cleaner uses native Unicode property escapes and browser-inert HTML contain
 # Date Difference Calculator audit
 
 Date calculations use a native integer proleptic-Gregorian engine with a supported input range of years 0001 through 9999 and no date dependency. Counts describe whole calendar dates rather than timezone-aware elapsed timestamps. The end date is excluded by default; reversed ranges return positive magnitudes with direction; years/months are applied before weeks/days; shorter target months clamp to their final day. Business-day holidays are manual, deduplicated and never fetched from an external service.
+
+# Image Compressor audit
+
+Image Compressor uses native browser decoding and Canvas encoding with 20 MB per-file, 20-file, 50 megapixel and 16,384 pixel-side safety limits. JPG/WebP target sizing is best-effort; PNG quality is not simulated. Animated images are rejected, encoded output drops metadata, and results remain local. The lightweight `fflate` dependency packages completed client-side results into ZIP files without recompressing image data.

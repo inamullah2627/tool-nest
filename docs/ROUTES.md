@@ -4,11 +4,11 @@ Implemented: `/`, `/about`, `/contact`, `/privacy-policy`, `/terms-and-condition
 
 The App Router `not-found.tsx` convention provides the custom recovery experience for unknown general, tool, category and article URLs. Invalid destinations return a real HTTP 404 response and the hydrated recovery UI replaces the visible address with `/404`; no separate 200-status `/404` page is created or included in the sitemap.
 
-The reusable individual-tool route `/tools/[slug]` is established. `/tools/json-formatter`, `/tools/html-formatter`, `/tools/css-minifier`, `/tools/word-counter`, `/tools/case-converter`, `/tools/remove-duplicate-lines`, `/tools/text-cleaner`, `/tools/meta-tag-generator`, `/tools/url-slug-generator`, `/tools/open-graph-generator` and `/tools/date-difference-calculator` are operational tool pages.
+The reusable individual-tool route `/tools/[slug]` is established. `/tools/json-formatter`, `/tools/html-formatter`, `/tools/css-minifier`, `/tools/word-counter`, `/tools/case-converter`, `/tools/remove-duplicate-lines`, `/tools/text-cleaner`, `/tools/meta-tag-generator`, `/tools/url-slug-generator`, `/tools/open-graph-generator`, `/tools/date-difference-calculator` and `/tools/image-compressor` are operational tool pages.
 
-Active indexed category routes: `/tools/category/developer`, `/tools/category/text`, `/tools/category/seo`, and `/tools/category/calculators`.
+Active indexed category routes: `/tools/category/developer`, `/tools/category/text`, `/tools/category/seo`, `/tools/category/image`, and `/tools/category/calculators`.
 
-Reviewable Coming Soon routes: `/tools/category/image` and `/tools/category/pdf`. These routes are marked `noindex` and excluded from `sitemap.xml`.
+Reviewable Coming Soon route: `/tools/category/pdf`. It is marked `noindex` and excluded from `sitemap.xml`.
 
 The `/blog` listing and reusable `/blog/[slug]` route are implemented. The featured preview links to `/blog/how-to-format-and-validate-json`; this demonstration article and the listing use `noindex, nofollow` and remain excluded from the sitemap. Unknown or content-less slugs return `notFound()`.
 

@@ -325,17 +325,83 @@ export const categoryConfigs: Record<CategoryId, CategoryConfig> = {
     ctaText:
       "Explore more free online utilities for your website and everyday digital tasks.",
   },
-  image: planned(
-    "image",
-    "IMAGE OPTIMIZATION TOOLKIT",
-    "Free Online Image Tools",
-    "Compress, resize, convert and optimize images with convenient browser-based utilities.",
-    ["Compression", "Resizing & Cropping", "Conversion"],
-    "image",
-    "Image Tools FAQs",
-    "Image Tools Are on the Way.",
-    plannedCta,
-  ),
+  image: {
+    slug: "image",
+    label: "IMAGE OPTIMIZATION TOOLKIT",
+    heading: "Free Online Image Tools",
+    lead: "Compress images privately in your browser and preview additional image utilities planned for future releases.",
+    button: "Browse Image Tools",
+    comingSoon: false,
+    groups: ["Compression"],
+    exploreText:
+      "Use the available Image Compressor. Other image tools remain pending.",
+    preview: "image",
+    featuresHeading: "Private Browser-Based Image Processing",
+    featuresText:
+      "Optimize supported images locally without uploads or registration.",
+    features: [
+      [
+        "min",
+        "Real Compression",
+        "Compress JPG and WebP or losslessly re-encode PNG images.",
+      ],
+      [
+        "layers",
+        "Batch Workflow",
+        "Process up to 20 images and download results individually or as a ZIP.",
+      ],
+      [
+        "shieldCheck",
+        "Local & Private",
+        "Image pixels remain in browser memory and are never uploaded.",
+      ],
+      [
+        "eye",
+        "Actual Previews",
+        "Compare original files with their real encoded results.",
+      ],
+    ],
+    stepsHeading: "How to Compress an Image",
+    steps: [
+      ["upload", "Choose an Image", "Add a supported JPG, PNG or WebP file."],
+      [
+        "sliders",
+        "Set Compression",
+        "Choose quality, format and optional resize settings.",
+      ],
+      [
+        "download",
+        "Download the Result",
+        "Compare the encoded file and save it locally.",
+      ],
+    ],
+    educationHeading: "Practical Image Optimization",
+    education: [
+      [
+        "Choose the Right Format",
+        "JPG suits photographs, PNG preserves lossless pixels and transparency, and WebP offers modern compression.",
+      ],
+      [
+        "Balance Size and Quality",
+        "Lower quality usually reduces JPG and WebP file size, while results vary with image complexity.",
+      ],
+      [
+        "Resize When Appropriate",
+        "Reducing pixel dimensions can save more bytes than encoder quality changes alone.",
+      ],
+      [
+        "Verify the Result",
+        "Use the comparison preview and byte statistics before downloading an optimized file.",
+      ],
+    ],
+    callout:
+      "Browser codecs and available memory vary by device, so output bytes can differ across browsers.",
+    faqHeading: "Image Tools FAQs",
+    faqs: activeFaq("image tools"),
+    ctaHeading: "Optimize Images Privately.",
+    ctaText:
+      "Use the Image Compressor now and return as more image tools become available.",
+  },
   pdf: planned(
     "pdf",
     "PDF PRODUCTIVITY TOOLKIT",

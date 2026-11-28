@@ -34,7 +34,7 @@ export const categories: Category[] = [
     description: "Convert, resize and optimize images.",
     color: "#EA580C",
     iconKey: "Image",
-    active: false,
+    active: true,
   },
   {
     id: "pdf",
@@ -266,6 +266,32 @@ export const tools: Tool[] = [
         "Calculate calendar differences, add or subtract dates, and count customizable business days locally in your browser.",
     },
   },
+  {
+    id: "image-compressor",
+    slug: "image-compressor",
+    name: "Image Compressor",
+    shortDescription:
+      "Compress, resize and convert JPG, PNG and WebP images locally.",
+    category: "image",
+    iconKey: "Minimize2",
+    keywords: [
+      "image compressor",
+      "compress image",
+      "reduce image size",
+      "jpg compressor",
+      "png compressor",
+      "webp compressor",
+    ],
+    group: "Compression",
+    availability: "catalog",
+    implementationStatus: "operational",
+    featured: true,
+    seo: {
+      title: "Image Compressor — Compress JPG, PNG & WebP — ToolNest",
+      description:
+        "Compress, resize and convert JPG, PNG and WebP images privately in your browser with batch processing and before-and-after previews.",
+    },
+  },
 ];
 export const categoryMap = Object.fromEntries(
   categories.map((category) => [category.id, category]),
@@ -277,14 +303,6 @@ type PlannedTool = Pick<
 >;
 
 export const plannedCategoryTools: PlannedTool[] = [
-  [
-    "image-compressor",
-    "Image Compressor",
-    "image",
-    "Reduce image file size.",
-    "Minimize2",
-    "Compression",
-  ],
   [
     "image-resizer",
     "Image Resizer",

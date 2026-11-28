@@ -44,7 +44,9 @@ describe("global search", () => {
     expect(index.some((item) => item.id === "remove-duplicate-lines")).toBe(
       true,
     );
-    expect(index.some((item) => item.id === "category-image")).toBe(false);
+    expect(index.some((item) => item.id === "image-compressor")).toBe(true);
+    expect(index.some((item) => item.id === "category-image")).toBe(true);
+    expect(index.some((item) => item.id === "category-pdf")).toBe(false);
     expect(
       index.some(
         (item) =>
