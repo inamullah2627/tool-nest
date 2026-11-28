@@ -57,9 +57,6 @@ export function DesignHeader() {
         <div className="wrap">
           <BrandLogo />
           <nav className="main" aria-label="Primary">
-            <Link href="/" aria-current={pathname === "/" ? "page" : undefined}>
-              Home
-            </Link>
             <Link
               href="/tools"
               aria-current={pathname === "/tools" ? "page" : undefined}
@@ -89,6 +86,12 @@ export function DesignHeader() {
               aria-current={pathname === "/about" ? "page" : undefined}
             >
               About
+            </Link>
+            <Link
+              href="/contact"
+              aria-current={pathname === "/contact" ? "page" : undefined}
+            >
+              Contact Us
             </Link>
           </nav>
           <div className="rt">
@@ -174,10 +177,10 @@ export function DesignHeader() {
             </button>
           </div>
           {[
-            ["Home", "/"],
             ["All Tools", "/tools"],
             ["Blog", "/blog"],
             ["About", "/about"],
+            ["Contact Us", "/contact"],
           ].map(([label, href]) => (
             <Link
               className="dl"
